@@ -1,0 +1,52 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+header {
+  padding: 13px;
+  margin: 72px 5px 10px 0px;
+}
+
+h1 {
+  font-size: 25px;
+  font-family: "Poppins", sans-serif;
+  font-weight: bold;
+  color: #505050;
+  text-align: center;
+}
+
+main {
+  margin-top: 98px;
+}
+
+section {
+  background-color: rgb(251, 222, 165, 0.25);
+  border-radius: 20px;
+  display: flex;
+  justify-content: space-around;
+  padding: 20px 5px 20px 5px;
+  margin-left: 41px;
+  margin-right: 41px;
+  margin-bottom: 59px;
+}
+
+h2 {
+  font-family: "Poppins", sans-serif;
+  font-size: 25px;
+  color: #505050;
+  padding-top: 25px;
+  font-stretch: normal;
+}
+
+a:link {
+  text-decoration: none;
+}
+
+a:visited {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
