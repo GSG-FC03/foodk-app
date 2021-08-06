@@ -1,0 +1,80 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+/* headerStyling */
+.drinksHeader {
+  margin-top: 70px;
+  margin-left: 15px;
+}
+.ri-arrow-left-s-line {
+  font-size: 40px;
+}
+.searchInput {
+  height: 49px;
+  width: 295px;
+  padding-left: 75px;
+  padding-top: 8px;
+  border-radius: 8px;
+  margin-left: 10px;
+  position: relative;
+  border: 1px solid #c2b5b5;
+  bottom: 10px;
+}
+
+.ri-search-line {
+  position: absolute;
+  top: 80px;
+  left: 90px;
+  font-size: 25px;
+}
+::placeholder {
+  color: #c2b5b5;
+  font-size: 24px;
+}
+/* cards of drinks styling */
+
+.drinksContainer {
+  height: 650px;
+  width: 325px;
+  margin-top: 40px;
+  margin-left: 40px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  overflow: auto;
+}
+.firstDrink {
+  height: 150px;
+  width: 150px;
+
+  border-radius: 25px;
+  position: relative;
+  margin-bottom: 25px;
+}
+.imgOfDrink {
+  height: 150px;
+  width: 150px;
+  border-radius: 20px;
+  margin-top: 0px;
+  margin-left: 0px;
+  object-fit: fill;
+}
+.favorite {
+  height: 45px;
+  width: 45px;
+  border-radius: 50%;
+  background-color: rgba(0, 0, 0, 0.5);
+  position: absolute;
+  bottom: 0px;
+  right: 0px;
+}
+.ri-heart-line {
+  color: #f3b658;
+  position: absolute;
+  font-size: 25px;
+  top: 10px;
+  left: 10px;
+}
