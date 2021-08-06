@@ -21,24 +21,27 @@ nav
  color:#505050; 
  display: flex;
  justify-content: space-between ;
+ font-family: "Poppins", sans-serif;
 }
 
 .Favorite
 {
     color:#505050;
-    font-size: 14px;
+    font-size: 17px;
     padding: 20px;
     padding-right: 38px;
     padding-top: 27px;
+    font-family: "Poppins", sans-serif;
 }
 
 .Home
 {
     color:#505050;
-    font-size: 14px;
-    padding: 20px;
+    font-size: 20px;
+    padding: 30px;
     padding-left: 38px;
     padding-top: 27px;
+    font-family: "Poppins", sans-serif;
 }
 a:link
 {
@@ -61,13 +64,17 @@ a:hover
     top: 15px;
     content: "\ee25";
     position: absolute;
-    left: 47px;
+    left:54px;
+    font-size: 22px;
+
 }
 
 .ri-heart-3-line:before
 {
     content: "\ee0b";
     position: absolute;
-    left: 305px;
+    left: 325px;
     top: 15px;
+    font-size: 22px;
+
 }
