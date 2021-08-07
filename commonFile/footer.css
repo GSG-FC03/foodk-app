@@ -74,4 +74,25 @@ a:hover
     top: 15px;
     font-size: 22px;
 
-}
+}/* MQ for footer for IPAD */
+@media only screen and (min-width: 768px) {
+  
+    .Home {
+      padding-left: 130px;
+      padding-top: 45px;
+    }
+    .ri-heart-3-line:before {
+      padding-left: 240px;
+      font-size: 30px;
+    }
+    .Favorite {
+      padding-right: 150px;
+      padding-top: 40px;
+    }
+  
+    .ri-home-8-line:before{
+        left: 150px;
+        top:20px;
+        font-size: 30px;
+    } 
+  }
