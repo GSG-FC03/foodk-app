@@ -1,0 +1,85 @@
+* {
+  margin: 0%;
+  padding: 0%;
+}
+
+.Route {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+.Start-Button {
+  border-radius: 4px;
+  background-color: #ff4d5d;
+  border: none;
+  color: #ffffff;
+  text-align: center;
+  font-size: 28px;
+  width: 300px;
+  height: 70px;
+  transition: all 0.5s;
+  cursor: pointer;
+}
+
+.Start-Button span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.Start-Button span:after {
+  content: "\00bb";
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.Route:hover span {
+  padding-right: 25px;
+}
+
+.Route:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+.Wellcome {
+  font-size: 35px;
+  margin-top: 10%;
+  text-align: center;
+  margin-bottom: 35%;
+  color: #505050;
+}
+.logo {
+  margin-top: 5%;
+
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  height: 332px;
+  width: 337px;
+}
+@media (min-width: 768px) {
+  .logo {
+    margin-top: 0%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    height: 632px;
+    width: 637px;
+  }
+  .Wellcome {
+    font-size: 55px;
+    margin-top: 3%;
+    text-align: center;
+    margin-bottom: 15%;
+  }
+  .Start-Button {
+    width: 400px;
+    height: 90px;
+    margin-bottom: 3%;
+  }
+}
