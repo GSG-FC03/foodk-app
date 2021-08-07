@@ -96,3 +96,24 @@ a:hover
         font-size: 30px;
     } 
   }
+  /* MQ for footer for  desktop  */
+@media only screen and (min-width:1024px){
+
+    .ri-home-8-line:before{
+        padding-left: 80px;
+    }
+    .Home{
+        padding-left: 210px;
+    }
+        .ri-heart-3-line:before {
+            padding-left: 500px;
+          }
+        
+          .Favorite {
+            padding-right: 140px;
+          }
+        
+          footer {
+            position: fixed;
+          }
+    }
