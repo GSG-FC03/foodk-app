@@ -4,43 +4,52 @@
   box-sizing: border-box;
   font-family: "Poppins", sans-serif;
 }
-/* headerStyling */
+
 .Heder {
-  margin-top: 70px;
   margin-left: 15px;
+  height: 90px;
+}
+.heythere .SearchB {
+  position: relative;
+  color: #505050;
+  font-size: 25px;
+  height: 50px;
+  width: 50px;
+  background-color: white;
+  border: none;
+}
+.BackB {
+  display: inline-block;
+  margin-top: 10%;
 }
 .ri-arrow-left-s-line {
   font-size: 40px;
+  color: #505050;
 }
 .searchInput {
   height: 49px;
-  width: 295px;
+  width: 245px;
   padding-left: 75px;
   padding-top: 8px;
   border-radius: 8px;
-  margin-left: 10px;
-  position: relative;
+  margin-top: -15%;
   border: 1px solid #c2b5b5;
-  bottom: 10px;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  -ms-border-radius: 8px;
+  -o-border-radius: 8px;
 }
 
-.ri-search-line {
-  position: absolute;
-  top: 80px;
-  left: 90px;
-  font-size: 25px;
-}
 ::placeholder {
   color: #c2b5b5;
   font-size: 24px;
 }
-/* cards of drinks styling */
 
 .Container {
   height: 650px;
   width: 325px;
   margin-top: 40px;
-  margin-left: 40px;
+  margin-left: 27px;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
@@ -49,7 +58,6 @@
 .FirstOpject {
   height: 150px;
   width: 150px;
-
   border-radius: 25px;
   position: relative;
   margin-bottom: 25px;
