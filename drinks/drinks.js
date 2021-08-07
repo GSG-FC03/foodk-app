@@ -11,17 +11,17 @@ async function getData() {
 }
 getData();
 
-const drinksContainer = document.getElementById("drinksContainer");
+const drinksContainer = document.getElementById("MainContainer");
 
 // function to create elements and get all photos of drinks from API
 function createCardsOfDrinks(data) {
   let arrayOfDrinks = data.drinks;
   for (let i = 0; i < arrayOfDrinks.length; i++) {
     const Drink = document.createElement("div");
-    Drink.setAttribute("class", "firstDrink");
+    Drink.setAttribute("class", "FirstOpject");
     drinksContainer.appendChild(Drink);
     const imgDrink = document.createElement("img");
-    imgDrink.setAttribute("class", "imgOfDrink");
+    imgDrink.setAttribute("class", "imgOfOpject");
 
     Drink.appendChild(imgDrink);
 

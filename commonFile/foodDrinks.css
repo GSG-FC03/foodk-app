@@ -5,7 +5,7 @@
   font-family: "Poppins", sans-serif;
 }
 /* headerStyling */
-.drinksHeader {
+.Heder {
   margin-top: 70px;
   margin-left: 15px;
 }
@@ -36,7 +36,7 @@
 }
 /* cards of drinks styling */
 
-.drinksContainer {
+.Container {
   height: 650px;
   width: 325px;
   margin-top: 40px;
@@ -46,7 +46,7 @@
   justify-content: space-between;
   overflow: auto;
 }
-.firstDrink {
+.FirstOpject {
   height: 150px;
   width: 150px;
 
@@ -54,7 +54,7 @@
   position: relative;
   margin-bottom: 25px;
 }
-.imgOfDrink {
+.imgOfOpject {
   height: 150px;
   width: 150px;
   border-radius: 20px;
