@@ -46,14 +46,14 @@
 }
 
 .Container {
-  height: 650px;
-  width: auto;
-  margin-top: 40px;
-  margin-left: 27px;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  overflow: auto;
+    height: 690px;
+    width: 330px;
+    margin-top: 40px;
+    margin-left: 40px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    overflow: auto;
 }
 .FirstOpject {
   height: 150px;
