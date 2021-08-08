@@ -95,3 +95,8 @@ const HomeButton = document.querySelector(".Home");
 HomeButton.addEventListener("click", function () {
   localStorage.removeItem(1);
 });
+const HomeButton = document.querySelector(".Favorite");
+HomeButton.addEventListener("click", function () {
+  localStorage.removeItem(1);
+});
+
