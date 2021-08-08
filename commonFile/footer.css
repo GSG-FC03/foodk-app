@@ -74,7 +74,7 @@
   .ri-heart-3-line:before {
     content: "\ee0b";
     position: absolute;
-    right: 74px;
+    right: 180px;
     top: 15px;
     font-size: 22px;
   }
@@ -124,7 +124,7 @@
     font-size: 22px;
   }
 }
-@media only screen and (min-width: 768px) and( max-width: 800px) {
+@media only screen and (min-width: 768px) {
   .Home {
     padding-left: 130px;
     padding-top: 45px;
