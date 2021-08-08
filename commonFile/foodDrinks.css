@@ -86,3 +86,12 @@
   top: 10px;
   left: 10px;
 }
+/* MQ for container for IPAD  */
+@media only screen and (min-width: 768px) {
+.Container{
+    margin-top: 80px;
+    width: 700px;
+    height: 770px;
+    margin-left: 35px;
+} 
+}
