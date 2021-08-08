@@ -3,7 +3,7 @@
     padding: 0;
     box-sizing: border-box;
   }
-  @media only screen and (max-width:800px){
+
 footer
 {
     position: absolute;
@@ -12,8 +12,6 @@ footer
     width: 100%;
     border-top-left-radius: 20px;
     border-top-right-radius: 20px;
-    margin-top: 180px;
-            
 } 
 
 nav
@@ -75,86 +73,5 @@ a:hover
     left: 325px;
     top: 15px;
     font-size: 22px;
-
-}
-
-}
-@media only screen and (min-width:800px){
-nav
-{
- color:#505050; 
- display: flex;
- justify-content: space-between ;
- font-family: "Poppins", sans-serif;
-
-}
-.ri-heart-3-line:before
-{
-    content: "\ee0b";
-    position: absolute;
-    right: 74px;
-    top: 15px;
-    font-size: 22px;
-
-}
-footer
-{
-    position: absolute;
-    bottom: 0;
-    background-color:#FCE8C0;
-    width: 100%;
-    border-top-left-radius: 20px;
-    border-top-right-radius: 20px;
-   
-}
-
-a:link
-{
-
-    text-decoration:none;
-}
-
-a:visited
-{
-    text-decoration:none;
-}
-
-a:hover
-{
-    text-decoration:none;
-}
-
-
-
-.Favorite
-{
-    color:#505050;
-    font-size: 20px;
-    padding-right: 38px;
-    padding-top: 35px;
-    font-family: "Poppins", sans-serif;
-}
-
-.Home
-{
-    color:#505050;
-    font-size: 20px;
-    padding-left: 38px;
-    padding-top: 35px;
-    font-family: "Poppins", sans-serif;
-}
-
-.ri-home-8-line:before
-{
-    content: "\ee25";
-    top: 15px;
-    content: "\ee25";
-    position: absolute;
-    left: 54px;
-    font-size: 22px;
-
-}
-
-
 
 }
