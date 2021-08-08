@@ -47,7 +47,7 @@
 
 .Container {
   height: 650px;
-  width: 325px;
+  width: auto;
   margin-top: 40px;
   margin-left: 27px;
   display: flex;
