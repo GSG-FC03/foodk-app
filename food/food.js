@@ -25,9 +25,12 @@ fetch(
     let dat = data.meals;
     for (element of dat) {
       // Create a div with a card class
+      const link= document.createElement("a");
+      link.setAttribute("href","../selectedProduct/selectedProduct.html");
       const Meal = document.createElement("div");
+      link.appendChild(Meal);
       Meal.setAttribute("class", "FirstOpject");
-      Container.appendChild(Meal);
+      Container.appendChild(link);
       const imgMeal = document.createElement("img");
       imgMeal.setAttribute("class", "imgOfOpject");
 
@@ -62,9 +65,12 @@ else{
       let dat = data.meals;
       for (element of dat) {
         // Create a div with a card class
+        const link= document.createElement("a");
+      link.setAttribute("href","../selectedProduct/selectedProduct.html");
         const Meal = document.createElement("div");
+        link.appendChild(Meal);
         Meal.setAttribute("class", "FirstOpject");
-        Container.appendChild(Meal);
+        Container.appendChild(link);
         const imgMeal = document.createElement("img");
         imgMeal.setAttribute("class", "imgOfOpject");
   
