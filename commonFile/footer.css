@@ -1,119 +1,160 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-
+ * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+@media only screen and (max-width:800px){
 footer
 {
-    position: absolute;
-    bottom: 0;
-    background-color:#FCE8C0;
-    width: 100%;
-    border-top-left-radius: 20px;
-    border-top-right-radius: 20px;
+  position: absolute;
+  bottom: 0;
+  background-color:#FCE8C0;
+  width: 100%;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  margin-top: 180px;
+          
 } 
 
 nav
 {
- color:#505050; 
- display: flex;
- justify-content: space-between ;
- font-family: "Poppins", sans-serif;
+color:#505050; 
+display: flex;
+justify-content: space-between ;
+font-family: "Poppins", sans-serif;
 
 }
 
 .Favorite
 {
-    color:#505050;
-    font-size: 20px;
-    padding-right: 38px;
-    padding-top: 35px;
-    font-family: "Poppins", sans-serif;
+  color:#505050;
+  font-size: 20px;
+  padding-right: 38px;
+  padding-top: 35px;
+  font-family: "Poppins", sans-serif;
 }
 
 .Home
 {
-    color:#505050;
-    font-size: 20px;
-    padding-left: 38px;
-    padding-top: 35px;
-    font-family: "Poppins", sans-serif;
+  color:#505050;
+  font-size: 20px;
+  padding-left: 38px;
+  padding-top: 35px;
+  font-family: "Poppins", sans-serif;
 }
 a:link
 {
 
-    text-decoration:none;
+  text-decoration:none;
 }
 
 a:visited
 {
-    text-decoration:none;
+  text-decoration:none;
 }
 
 a:hover
 {
-    text-decoration:none;
+  text-decoration:none;
 }
 .ri-home-8-line:before
 {
-    content: "\ee25";
-    top: 15px;
-    content: "\ee25";
-    position: absolute;
-    left: 54px;
-    font-size: 22px;
+  content: "\ee25";
+  top: 15px;
+  content: "\ee25";
+  position: absolute;
+  left: 54px;
+  font-size: 22px;
 
 }
 
 .ri-heart-3-line:before
 {
-    content: "\ee0b";
-    position: absolute;
-    left: 325px;
-    top: 15px;
-    font-size: 22px;
+  content: "\ee0b";
+  position: absolute;
+  left: 325px;
+  top: 15px;
+  font-size: 22px;
 
-}/* MQ for footer for IPAD */
-@media only screen and (min-width: 768px) {
-  
-    .Home {
-      padding-left: 130px;
-      padding-top: 45px;
-    }
-    .ri-heart-3-line:before {
-      padding-left: 240px;
-      font-size: 30px;
-    }
-    .Favorite {
-      padding-right: 150px;
-      padding-top: 40px;
-    }
-  
-    .ri-home-8-line:before{
-        left: 150px;
-        top:20px;
-        font-size: 30px;
-    } 
-  }
-  /* MQ for footer for  desktop  */
-@media only screen and (min-width:1024px){
+}
 
-    .ri-home-8-line:before{
-        padding-left: 80px;
-    }
-    .Home{
-        padding-left: 210px;
-    }
-        .ri-heart-3-line:before {
-            padding-left: 500px;
-          }
-        
-          .Favorite {
-            padding-right: 140px;
-          }
-        
-          footer {
-            position: fixed;
-          }
-    }
+}
+@media only screen and (min-width:800px){
+nav
+{
+color:#505050; 
+display: flex;
+justify-content: space-between ;
+font-family: "Poppins", sans-serif;
+
+}
+.ri-heart-3-line:before
+{
+  content: "\ee0b";
+  position: absolute;
+  right: 74px;
+  top: 15px;
+  font-size: 22px;
+
+}
+footer
+{
+  position: absolute;
+  bottom: 0;
+  background-color:#FCE8C0;
+  width: 100%;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+ 
+}
+
+a:link
+{
+
+  text-decoration:none;
+}
+
+a:visited
+{
+  text-decoration:none;
+}
+
+a:hover
+{
+  text-decoration:none;
+}
+
+
+
+.Favorite
+{
+  color:#505050;
+  font-size: 20px;
+  padding-right: 38px;
+  padding-top: 35px;
+  font-family: "Poppins", sans-serif;
+}
+
+.Home
+{
+  color:#505050;
+  font-size: 20px;
+  padding-left: 38px;
+  padding-top: 35px;
+  font-family: "Poppins", sans-serif;
+}
+
+.ri-home-8-line:before
+{
+  content: "\ee25";
+  top: 15px;
+  content: "\ee25";
+  position: absolute;
+  left: 54px;
+  font-size: 22px;
+
+}
+
+
+
+} 
