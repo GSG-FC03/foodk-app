@@ -17,7 +17,7 @@ header {
 }
 
 main {
-  margin-top: 98px;
+  margin-top: 55px;
 }
 
 section {
@@ -53,4 +53,53 @@ a:visited
 a:hover
 {
     text-decoration:none;
+}
+
+@media only screen and  (min-width:800px){
+header {
+  padding: 13px;
+  margin: 38px 5px 10px 0px;
+}
+.choose {
+  font-size: 34px;
+  font-family: "Poppins", sans-serif;
+  font-weight: bold;
+  color: #505050;
+  text-align: center;
+}
+
+  section {
+    background-color: rgb(251, 222, 165, 0.25);
+    border-radius: 20px;
+    display: flex;
+    justify-content: space-around;
+    padding: 20px 5px 20px 5px;
+    margin-left: 110px;
+    margin-right: 110px;
+    margin-bottom: 59px;
+    height: 17vh;
+}
+.list
+{
+ font-family: "Poppins", sans-serif;
+ font-size: 30px;
+ color: #505050;
+ padding-top: 20px;
+ text-align: center;
+
+}
+}  @media only screen and (min-width: 768px) {
+
+  .Home {
+    padding-left: 130px;
+    padding-top: 45px;
+  }
+  .ri-heart-3-line:before {
+    padding-left: 250px;
+    font-size: 30px;
+  }
+  .Favorite {
+    padding-right: 130px;
+    padding-top: 45px;
+  }
 }
