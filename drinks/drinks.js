@@ -28,7 +28,7 @@ link.setAttribute("href","../selectedProduct/selectedProduct.html")
     const imgDrink = document.createElement("img");
     imgDrink.setAttribute("class", "imgOfOpject");
 
-    Drink.appendChild(imgDrink);
+    link.appendChild(imgDrink);
 
     imgDrink.setAttribute("src", `${arrayOfDrinks[i].strDrinkThumb}`);
     const favoriteDrink = document.createElement("div");
@@ -39,8 +39,8 @@ link.setAttribute("href","../selectedProduct/selectedProduct.html")
     const favIcon = document.createElement("i");
     favIcon.setAttribute("class", "ri-heart-line");
     favoriteDrink.appendChild(favIcon);
-    link.appendChild(Drink);
-    drinksContainer.appendChild(link);
+    Drink.appendChild(link);
+    drinksContainer.appendChild(Drink);
   }
 }
 function searchs(e) {
@@ -74,11 +74,11 @@ function searchs(e) {
         const favIcon = document.createElement("i");
         favIcon.setAttribute("class", "ri-heart-line");
 
-        Drink.appendChild(imgDrink);;
+        link.appendChild(imgDrink);;
         favoriteDrink.appendChild(favIcon);
         Drink.appendChild(favoriteDrink);
-        link.appendChild(Drink);
-        drinksContainer.appendChild(link);
+        Drink.appendChild(link);
+        drinksContainer.appendChild(Drink);
       }
     })
     .catch((rej) => console.log(rej));

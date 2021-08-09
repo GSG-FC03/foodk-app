@@ -28,23 +28,23 @@ fetch(
       const link= document.createElement("a");
       link.setAttribute("href","../selectedProduct/selectedProduct.html");
       const Meal = document.createElement("div");
-      link.appendChild(Meal);
+      Meal.appendChild(link);
       Meal.setAttribute("class", "FirstOpject");
-      Container.appendChild(link);
+      Container.appendChild(Meal);
       const imgMeal = document.createElement("img");
       imgMeal.setAttribute("class", "imgOfOpject");
 
-      Meal.appendChild(imgMeal);
+      link.appendChild(imgMeal);
 
       imgMeal.setAttribute("src", `${element.strMealThumb}`);
-      const favoriteDrink = document.createElement("div");
-      favoriteDrink.setAttribute("class", "favorite");
+      const favoritMeal = document.createElement("div");
+      favoritMeal.setAttribute("class", "favorite");
 
-      Meal.appendChild(favoriteDrink);
+      Meal.appendChild(favoritMeal);
 
       const favIcon = document.createElement("i");
       favIcon.setAttribute("class", "ri-heart-line");
-      favoriteDrink.appendChild(favIcon);
+      favoritMeal.appendChild(favIcon);
     }
   });
 }
@@ -66,25 +66,25 @@ else{
       for (element of dat) {
         // Create a div with a card class
         const link= document.createElement("a");
-      link.setAttribute("href","../selectedProduct/selectedProduct.html");
+        link.setAttribute("href","../selectedProduct/selectedProduct.html");
         const Meal = document.createElement("div");
-        link.appendChild(Meal);
+        Meal.appendChild(link);
         Meal.setAttribute("class", "FirstOpject");
-        Container.appendChild(link);
+        Container.appendChild(Meal);
         const imgMeal = document.createElement("img");
         imgMeal.setAttribute("class", "imgOfOpject");
   
-        Meal.appendChild(imgMeal);
+        link.appendChild(imgMeal);
   
         imgMeal.setAttribute("src", `${element.strMealThumb}`);
-        const favoriteDrink = document.createElement("div");
-        favoriteDrink.setAttribute("class", "favorite");
+        const favoritMeal = document.createElement("div");
+        favoritMeal.setAttribute("class", "favorite");
   
-        Meal.appendChild(favoriteDrink);
+        Meal.appendChild(favoritMeal);
   
         const favIcon = document.createElement("i");
         favIcon.setAttribute("class", "ri-heart-line");
-        favoriteDrink.appendChild(favIcon);
+        favoritMeal.appendChild(favIcon);
       }
     });
 
