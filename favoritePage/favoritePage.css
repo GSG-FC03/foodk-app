@@ -1,1 +1,31 @@
-
+* {
+  margin: 0%;
+  padding: 0%;
+  font-family: "Poppins", sans-serif;
+}
+/* start of styling the header */
+.headFav {
+  height: 90px;
+  display: inline-flex;
+  width: -webkit-fill-available;
+  background-color: #ffffff;
+  padding: 15px 10px;
+  box-shadow: 0px 4px 10px rgba(128, 128, 128, 0.15);
+}
+.intro {
+  display: inline;
+  padding: 10px;
+  color: #505050;
+  font-size: 30px;
+  width: -webkit-fill-available;
+  text-align: center;
+  padding-right: 50px;
+}
+.BackB {
+  display: inline-block;
+  width: auto;
+  height: 50px;
+  font-size: 45px;
+  color: #505050;
+}
+/* end of styling the header*/

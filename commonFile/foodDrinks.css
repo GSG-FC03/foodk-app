@@ -5,11 +5,24 @@
   font-family: "Poppins", sans-serif;
 }
 
-.Heder {
-  margin-left: 15px;
-  height: 90px;
+.Header {
+  padding: 0px 10px;
+  padding-top: 60px;
+  display: inline-flex;
+  justify-content: center;
+  width: -webkit-fill-available;
 }
-.heythere .SearchB {
+.searchCon {
+  display: inline-flex;
+  justify-content: space-between;
+}
+
+.BackB {
+  display: inline-block;
+  margin-top: 10%;
+}
+
+.SearchB {
   position: relative;
   color: #505050;
   font-size: 25px;
@@ -17,22 +30,15 @@
   width: 50px;
   background-color: white;
   border: none;
+  padding-top: 5px;
 }
-.BackB {
-  display: inline-block;
-  margin-top: 10%;
-}
-.ri-arrow-left-s-line {
-  font-size: 40px;
-  color: #505050;
-}
+
 .searchInput {
-  height: 49px;
+  height: 50px;
   width: 245px;
-  padding-left: 75px;
-  padding-top: 8px;
+  padding: 0px 15px;
+  text-align: left;
   border-radius: 8px;
-  margin-top: -15%;
   border: 1px solid #c2b5b5;
   -webkit-border-radius: 8px;
   -moz-border-radius: 8px;
@@ -43,6 +49,16 @@
 ::placeholder {
   color: #c2b5b5;
   font-size: 24px;
+}
+
+.ri-arrow-left-s-line:before {
+  font-size: 40px;
+  color: #505050;
+}
+
+.ri-search-line:before {
+  font-size: 30px;
+  color: #505050;
 }
 
 .Container {
