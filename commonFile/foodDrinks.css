@@ -62,10 +62,10 @@
 }
 
 .Container {
-  height: 650px;
-  width: auto;
+  height: 690px;
+  width: 330px;
   margin-top: 40px;
-  margin-left: 27px;
+  margin-left: 40px;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
@@ -101,4 +101,21 @@
   font-size: 25px;
   top: 10px;
   left: 10px;
+}
+/* MQ for container for IPAD  */
+@media only screen and (min-width: 768px) {
+  .Container {
+    margin-top: 80px;
+    width: 700px;
+    height: 770px;
+    margin-left: 35px;
+  }
+}
+/* MQ for container for desktop  */
+@media only screen and (min-width: 800px) {
+  .Container {
+    width: 1180px;
+    height: 300px;
+    margin-top: 110px;
+  }
 }
