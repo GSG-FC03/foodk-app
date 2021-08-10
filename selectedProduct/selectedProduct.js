@@ -3,6 +3,7 @@ const item = localStorage.getItem("value");
 const imagesrc = document.getElementsByClassName("img")[0];
 const descriptionOfItems = document.querySelector(".descriptionOfItems");
 
+// to display the chosen dish
 if (item) {
   fetch(`https://www.themealdb.com/api/json/v1/1/search.php?s=${item}`)
     .then((res) => {
@@ -15,13 +16,21 @@ if (item) {
     .then((data) => {
       for (let s of data.meals) {
         if (s.strMeal === item) {
+
+          // give the img class src 
           imagesrc.setAttribute("src", `${s.strMealThumb}`);
-          const arrow = document.createElement("div");
-          const arrowIcon = document.createElement("i");
+
+         // create a in anchor tag and , class , href  
+          const arrow = document.createElement("a");
           arrow.setAttribute("class", "arrow");
+          arrow.setAttribute("href", "../food/food.html");
           imgOfHeader.appendChild(arrow);
+
+          // create an i tag and give it class ri-arrow-left-s-line
+          const arrowIcon = document.createElement("i");
           arrowIcon.setAttribute("class", "ri-arrow-left-s-line");
           arrow.appendChild(arrowIcon);
+
           const favoriteIcon = document.createElement("div");
           favoriteIcon.setAttribute("class", "favoriteIcon");
           imgOfHeader.appendChild(favoriteIcon);
@@ -50,14 +59,17 @@ if (item) {
           const category = document.createElement("h3");
           typeOfObject.appendChild(category);
           category.textContent = `${s.strCategory}`;
+
           // div of area of selected item
           const areaOfObject = document.createElement("div");
           areaOfObject.setAttribute("class", "item");
           descriptionOfItems.appendChild(areaOfObject);
+
           const paraOfArea = document.createElement("p");
           paraOfArea.setAttribute("class", "Headnotes");
           areaOfObject.appendChild(paraOfArea);
           paraOfArea.textContent = "Area";
+
           const area = document.createElement("h3");
           areaOfObject.appendChild(area);
           area.textContent = `${s.strArea}`;
@@ -112,12 +124,21 @@ if (item) {
           const plusIcon3 = document.createElement("i");
           plusIcon3.setAttribute("class", "ri-add-line");
           instructionsOfObject.appendChild(plusIcon3);
+
+          // when we click on plus sign display instructions
+          plusIcon3.onclick = function () {
+            instructions.style.display = "block";
+          };
+          const instructions = document.createElement("p");
+          instructionsOfObject.appendChild(instructions);
+          instructions.textContent = `${s.strInstructions}`;
+          instructions.style.display = "none";
         }
       }
     })
     .catch((eroo) => console.log(eroo));
 }
-
+// to display the chosen drink
 if (item) {
   fetch(`https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${item}`)
     .then((res) => {
@@ -127,21 +148,22 @@ if (item) {
         return res.json();
       }
     })
+
     .then((data) => {
       for (let s of data.drinks) {
         if (s.strDrink === item) {
-
           imagesrc.setAttribute("src", `${s.strDrinkThumb}`);
 
           const arrow = document.createElement("a");
           arrow.setAttribute("class", "arrow");
-          // arrow.setAttribute("href","../drinks/drinks.html")
+          arrow.setAttribute("href", "../drinks/drinks.html");
           imgOfHeader.appendChild(arrow);
 
           const arrowIcon = document.createElement("i");
-          arrowIcon.setAttribute("class","ri-arrow-left-s-line");
+          arrowIcon.setAttribute("class", "ri-arrow-left-s-line");
           arrow.appendChild(arrowIcon);
 
+          
           const favoriteIcon = document.createElement("div");
           favoriteIcon.setAttribute("class", "favoriteIcon");
           imgOfHeader.appendChild(favoriteIcon);
@@ -188,7 +210,6 @@ if (item) {
           const plusIcon1 = document.createElement("i");
           plusIcon1.setAttribute("class", "ri-add-line");
           ingradientsOfObject.appendChild(plusIcon1);
-      
 
           // div of   quantities of selected item
           const quantitiesOfObject = document.createElement("div");
@@ -223,9 +244,10 @@ if (item) {
           const plusIcon3 = document.createElement("i");
           plusIcon3.setAttribute("class", "ri-add-line");
           instructionsOfObject.appendChild(plusIcon3);
+
+          // when we click on plus sign display instructions
           plusIcon3.onclick = function () {
             instructions.style.display = "block";
-
           };
           const instructions = document.createElement("p");
           instructionsOfObject.appendChild(instructions);
