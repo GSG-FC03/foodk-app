@@ -28,10 +28,7 @@
   position: absolute;
   left: 10px;
 }
-.arrow {
-  position: relative;
-  bottom: 210px;
-}
+
 .ri-arrow-left-s-line {
   position: absolute;
   font-size: 45px;
@@ -93,4 +90,10 @@
 }
 .divOfData .ri-add-line {
   bottom: 130px;
+}
+.ri-arrow-left-s-line:before {
+  content: "\ea64";
+  position: absolute;
+  right: 360px;
+  top: 34px;
 }
