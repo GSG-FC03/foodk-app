@@ -111,6 +111,5 @@ function forSelected(items) {
   const select = items.target.parentElement;
   const selectedElemet = select.getElementsByClassName("mealName")[0].innerHTML;
   const s = localStorage.setItem("value", selectedElemet);
-  mealLocalStorge.push(s);
-  console.log(mealLocalStorge);
+
 }
