@@ -1,12 +1,13 @@
-const button = document.querySelector(".SearchB");
 const search = document.querySelector(".searchInput");
 const Container = document.getElementById("MainContainer");
 
 Container.addEventListener("click", forSelected);
-button.addEventListener("click", function () {
-  localStorage.setItem(1, search.value);
-  location.reload();
-});
+search.onkeypress = function (e) {
+  if (e.key === "Enter") {
+    localStorage.setItem(1, search.value);
+    location.reload();
+  }
+};
 
 if (localStorage.getItem(1) != null) {
   fetch(
@@ -111,5 +112,4 @@ function forSelected(items) {
   const select = items.target.parentElement;
   const selectedElemet = select.getElementsByClassName("mealName")[0].innerHTML;
   const s = localStorage.setItem("value", selectedElemet);
-
 }
