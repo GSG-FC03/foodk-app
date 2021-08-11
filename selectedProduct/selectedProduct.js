@@ -20,9 +20,8 @@ if (item) {
           // give the img class src 
           imagesrc.setAttribute("src", `${s.strMealThumb}`);
 
-         // create a in anchor tag and , class , href  
+
           const arrow = document.createElement("a");
-          arrow.setAttribute("class", "arrow");
           arrow.setAttribute("href", "../food/food.html");
           imgOfHeader.appendChild(arrow);
 
