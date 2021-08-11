@@ -22,7 +22,7 @@
   margin-top: 10%;
 }
 
-.SearchB {
+/* .Search {
   position: relative;
   color: #505050;
   font-size: 25px;
@@ -31,19 +31,23 @@
   background-color: white;
   border: none;
   padding-top: 5px;
-}
+} */
 
 .searchInput {
   height: 50px;
-  width: 245px;
-  padding: 0px 15px;
+  width: 330px;
   text-align: left;
   border-radius: 8px;
-  border: 1px solid #c2b5b5;
+  border: 1px solid #bcbcbc;
   -webkit-border-radius: 8px;
   -moz-border-radius: 8px;
   -ms-border-radius: 8px;
   -o-border-radius: 8px;
+  padding: 31px;
+  padding-top: 34px;
+  padding-right: 31px;
+  padding-bottom: 31px;
+  padding-left: 70px;
 }
 
 ::placeholder {
@@ -54,11 +58,15 @@
 .ri-arrow-left-s-line:before {
   font-size: 40px;
   color: #505050;
+  content: "\ea64";
 }
 
 .ri-search-line:before {
-  font-size: 30px;
-  color: #505050;
+  font-size: 25px;
+  color: #c2b5b5;
+  position: fixed;
+  left: 260px;
+  top: 74px;
 }
 
 .Container {
@@ -69,7 +77,6 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  overflow: auto;
 }
 .FirstOpject {
   height: 150px;
@@ -110,12 +117,38 @@
     height: 770px;
     margin-left: 35px;
   }
+  .ri-arrow-left-s-line:before {
+    font-size: 40px;
+    color: #505050;
+    content: "\ea64";
+    position: absolute;
+    left: 35px;
+    top: 65px;
+  }
 }
 /* MQ for container for desktop  */
 @media only screen and (min-width: 800px) {
   .Container {
-    width: 1180px;
-    height: 300px;
-    margin-top: 110px;
+    width: 85%;
+    margin-top: 40px;
+    margin-top: 48px;
+    margin-right: 120px;
+    margin-bottom: 20px;
+    margin-left: 120px;
+  }
+  .ri-arrow-left-s-line:before {
+    font-size: 40px;
+    color: #505050;
+    content: "\ea64";
+    position: absolute;
+    left: 35px;
+    top: 65px;
+  }
+  .ri-search-line:before {
+    font-size: 25px;
+    color: #c2b5b5;
+    position: fixed;
+    left: 515px;
+    top: 74px;
   }
 }

@@ -16,11 +16,10 @@ if (item) {
     .then((data) => {
       for (let s of data.meals) {
         if (s.strMeal === item) {
-
-          // give the img class src 
+          // give the img class src
           imagesrc.setAttribute("src", `${s.strMealThumb}`);
 
-         // create a in anchor tag and , class , href  
+          // create a in anchor tag and , class , href
           const arrow = document.createElement("a");
           arrow.setAttribute("class", "arrow");
           arrow.setAttribute("href", "../food/food.html");
@@ -121,18 +120,37 @@ if (item) {
           paraOfInstructions.textContent = "Instructions";
 
           // creation of plus icon
+          const plusIcon4 = document.createElement("i");
+          plusIcon4.setAttribute("class", "ri-subtract-fill");
+          instructionsOfObject.appendChild(plusIcon4);
+          plusIcon4.style.display = "none";
+
+          plusIcon4.onclick = function () {
+            instructions.style.display = "none";
+            instructionDiv.style.display = "none";
+            plusIcon3.style.display = "block";
+            plusIcon4.style.display = "none";
+          };
+          // when we click on plus sign display instructions
           const plusIcon3 = document.createElement("i");
           plusIcon3.setAttribute("class", "ri-add-line");
           instructionsOfObject.appendChild(plusIcon3);
 
-          // when we click on plus sign display instructions
           plusIcon3.onclick = function () {
+            instructionDiv.style.display = "block";
             instructions.style.display = "block";
+            plusIcon3.style.display = "none";
+            plusIcon4.style.display = "block";
           };
+          const instructionDiv = document.createElement("div");
+          instructionDiv.setAttribute("class", "instructionDiv");
+          instructionsOfObject.appendChild(instructionDiv);
+          instructionDiv.style.display = "none";
+
           const instructions = document.createElement("p");
-          instructionsOfObject.appendChild(instructions);
           instructions.textContent = `${s.strInstructions}`;
           instructions.style.display = "none";
+          instructionDiv.appendChild(instructions);
         }
       }
     })
@@ -163,7 +181,6 @@ if (item) {
           arrowIcon.setAttribute("class", "ri-arrow-left-s-line");
           arrow.appendChild(arrowIcon);
 
-          
           const favoriteIcon = document.createElement("div");
           favoriteIcon.setAttribute("class", "favoriteIcon");
           imgOfHeader.appendChild(favoriteIcon);
@@ -239,20 +256,38 @@ if (item) {
           paraOfInstructions.textContent = "Instructions";
           instructionsOfObject.appendChild(paraOfInstructions);
           paraOfInstructions.setAttribute("class", "Headnotes");
-
           // creation of plus icon
+          const plusIcon4 = document.createElement("i");
+          plusIcon4.setAttribute("class", "ri-subtract-fill");
+          instructionsOfObject.appendChild(plusIcon4);
+          plusIcon4.style.display = "none";
+
+          plusIcon4.onclick = function () {
+            instructionDiv.style.display = "none";
+            instructions.style.display = "none";
+            plusIcon3.style.display = "block";
+            plusIcon4.style.display = "none";
+          };
+          // when we click on plus sign display instructions
           const plusIcon3 = document.createElement("i");
           plusIcon3.setAttribute("class", "ri-add-line");
           instructionsOfObject.appendChild(plusIcon3);
 
-          // when we click on plus sign display instructions
           plusIcon3.onclick = function () {
+            instructionDiv.style.display = "block";
             instructions.style.display = "block";
+            plusIcon3.style.display = "none";
+            plusIcon4.style.display = "block";
           };
+          const instructionDiv = document.createElement("div");
+          instructionDiv.setAttribute("class", "instructionDiv");
+          instructionsOfObject.appendChild(instructionDiv);
+          instructionDiv.style.display = "none";
+
           const instructions = document.createElement("p");
-          instructionsOfObject.appendChild(instructions);
           instructions.textContent = `${s.strInstructions}`;
           instructions.style.display = "none";
+          instructionDiv.appendChild(instructions);
         }
       }
     })
