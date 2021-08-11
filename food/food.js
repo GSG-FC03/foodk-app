@@ -39,11 +39,29 @@ fetch(
       imgMeal.setAttribute("src", `${element.strMealThumb}`);
       const favoritMeal = document.createElement("div");
       favoritMeal.setAttribute("class", "favorite");
-
+      const mealName = document.createElement("p");
+      mealName.setAttribute("class", "mealName");
+      mealName.textContent = `${element.strMeal}`;
+      mealName.style.display = "none";
+      Meal.appendChild(mealName);
       Meal.appendChild(favoritMeal);
 
+      var LocalstorageValues = localStorage.getItem("favoriteMeals");
+      LocalstorageValues = LocalstorageValues
+        ? LocalstorageValues.split(",")
+        : [];
+      var Found = Boolean(
+        LocalstorageValues.includes(element.strMeal)
+      );
       const favIcon = document.createElement("i");
-      favIcon.setAttribute("class", "ri-heart-line");
+      if (Found == false) {
+        favIcon.setAttribute("class", "ri-heart-line");
+        favIcon.setAttribute("onclick", "Favorite(this)");
+      } else {
+        //favIcon.setAttribute("class", "fas");
+        favIcon.setAttribute("class", "fas fa-heart");
+        favIcon.setAttribute("onclick", "Favorite(this)");
+      }
       favoritMeal.appendChild(favIcon);
     }
   });
@@ -81,11 +99,57 @@ else{
         favoritMeal.setAttribute("class", "favorite");
   
         Meal.appendChild(favoritMeal);
-  
+  const mealName = document.createElement("p");
+      mealName.setAttribute("class", "mealName");
+      mealName.textContent = `${element.strMeal}`;
+      mealName.style.display = "none";
+      Meal.appendChild(mealName);
+        var LocalstorageValues = localStorage.getItem("favoriteMeals");
+        LocalstorageValues = LocalstorageValues
+          ? LocalstorageValues.split(",")
+          : [];
+        var Found = Boolean(
+          LocalstorageValues.includes(element.strMeal)
+        );
         const favIcon = document.createElement("i");
-        favIcon.setAttribute("class", "ri-heart-line");
+        if (Found == false) {
+          favIcon.setAttribute("class", "ri-heart-line");
+          favIcon.setAttribute("onclick", "Favorite(this)");
+        } else {
+          //favIcon.setAttribute("class", "fas");
+          favIcon.setAttribute("class", "fas fa-heart");
+          favIcon.setAttribute("onclick", "Favorite(this)");
+        }
         favoritMeal.appendChild(favIcon);
       }
     });
 
+}
+function Favorite(x) {
+  if (x.classList == "ri-heart-line") {
+    x.classList.toggle("ri-heart-line");
+    x.classList.toggle("fas");
+    x.classList.toggle("fa-heart");
+    const select =
+      x.parentElement.parentElement.getElementsByClassName("mealName")[0]
+        .innerHTML;
+
+    var LocalStorageArr = localStorage.getItem("favoriteMeals");
+    LocalStorageArr = LocalStorageArr ? LocalStorageArr.split(",") : [];
+    LocalStorageArr.push(select);
+    localStorage.setItem("favoriteMeals", LocalStorageArr);
+  } else {
+    x.classList.toggle("ri-heart-line");
+    x.classList.toggle("fas");
+    x.classList.toggle("fa-heart");
+    const select =
+      x.parentElement.parentElement.getElementsByClassName("mealName")[0]
+        .innerHTML;
+    var LocalStorageArr = localStorage.getItem("favoriteMeals");
+    LocalStorageArr = LocalStorageArr ? LocalStorageArr.split(",") : [];
+    var remove = LocalStorageArr.indexOf(select);
+    LocalStorageArr.splice(remove, 1);
+
+    localStorage.setItem("favoriteMeals", LocalStorageArr);
+  }
 }
