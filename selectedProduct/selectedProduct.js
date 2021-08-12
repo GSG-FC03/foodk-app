@@ -85,25 +85,35 @@ if (item) {
           paraOfIngradients.setAttribute("class", "Headnotes");
           ingradientsOfObject.appendChild(paraOfIngradients);
           paraOfIngradients.textContent = "Ingradients";
-                // making fo loop to get values of all ingradients that have value
-              let aray1=[];
-              for (const [key, value] of Object.entries(s)) {
-                  if(key.includes("strIngredient")&& value!=""){
-                      aray1.push(value);
-                    
-                  }
-                
-                }
+      
+                    // create lists to list items
+          const unorderedList = document.createElement("ul");
+          ingradientsOfObject.appendChild(unorderedList);
+                  // making fo loop to get values of all ingradients that have value
+          let aray1 = [];
+
+          for (const [key, value] of Object.entries(s)) {
+            if (key.includes("strIngredient") && value != "") {
+              aray1.push(value);
+            }
+          }
 
           // creation of plus icon
           const plusIcon1 = document.createElement("i");
           plusIcon1.setAttribute("class", "ri-add-line");
           ingradientsOfObject.appendChild(plusIcon1);
           //add on click on plus to get data of quantiries
-          plusIcon1.onclick=function(){
-            paraOfIngradients.textContent = "Ingradients   "+`${aray1}`;
-          }
+          plusIcon1.onclick = function () {
+              //for loop on array to get data and put it in list
+            for (let l1 of aray1) {
+              const list1 = document.createElement("li");
+              unorderedList.appendChild(list1);
+            
+              list1.textContent = `${l1}`;
+            }
 
+            
+          };
 
           // div of   quantities of selected item
           const quantitiesOfObject = document.createElement("div");
@@ -114,25 +124,34 @@ if (item) {
           paraOfQuantities.setAttribute("class", "Headnotes");
           quantitiesOfObject.appendChild(paraOfQuantities);
           paraOfQuantities.textContent = "Quantities";
-                // making fo loop to get values of all ingradients that have value
-                  let aray2=[];
-                  for (const [key, value] of Object.entries(s)) {
-                      if(key.includes("strMeasure")&& value!=""){
-                          aray2.push(value);
-                        
-                      }
-                    
-                    }
-
-                // creation of plus icon
-                const plusIcon2 = document.createElement("i");
-                plusIcon2.setAttribute("class", "ri-add-line");
-                quantitiesOfObject.appendChild(plusIcon2);
-                    //add on click on plus to get data of quantiries
-                    plusIcon2.onclick=function(){
-                        paraOfQuantities.textContent = "Quantitites   "+`${aray2}`;
-                    }
         
+            // create lists to list items
+          const unorderedList2 = document.createElement("ol");
+          ingradientsOfObject.appendChild(unorderedList2);
+         // making fo loop to get values of all ingradients that have value
+          let aray2 = [];
+          const list2 = document.createElement("li");
+          for (const [key, value] of Object.entries(s)) {
+            if (key.includes("strMeasure") && value != "") {
+              aray2.push(value);
+            }
+          }
+
+          // creation of plus icon
+          const plusIcon2 = document.createElement("i");
+          plusIcon2.setAttribute("class", "ri-add-line");
+          quantitiesOfObject.appendChild(plusIcon2);
+          //add on click on plus to get data of quantiries
+          plusIcon2.onclick = function () {
+                  //for loop on array to get data and put it in list
+            for (let l2 of aray2) {
+                const list2 = document.createElement("li");
+              unorderedList.appendChild(list2);
+
+              list2.textContent = `${l2}`;
+            }
+          };
+
           const instructionsOfObject = document.createElement("div");
           instructionsOfObject.setAttribute(
             "class",
@@ -236,7 +255,7 @@ if (item) {
           const category = document.createElement("h3");
           typeOfObject.appendChild(category);
           category.textContent = `${s.strCategory}`;
-                // div of ingradients of selected item
+          // div of ingradients of selected item
           const ingradientsOfObject = document.createElement("div");
           ingradientsOfObject.setAttribute(
             "class",
@@ -249,24 +268,33 @@ if (item) {
           ingradientsOfObject.appendChild(paraOfIngradients);
           paraOfIngradients.textContent = "Ingradients";
 
-                // making fo loop to get values of all ingradients that have value
-                let aray1=[];
-                for (const [key, value] of Object.entries(s)) {
-                    if(key.includes("strIngredient")&& value!=""){
-                        aray1.push(value);
-                    
-                    }
-                
-                }
+
+            // create lists to list items
+            const unorderedList1 = document.createElement("ol");
+            ingradientsOfObject.appendChild(unorderedList1);
+
+          // making fo loop to get values of all ingradients that have value
+          let aray1 = [];
+          for (const [key, value] of Object.entries(s)) {
+            if (key.includes("strIngredient") && value != null) {
+              aray1.push(value);
+            }
+          }
 
           // creation of plus icon
           const plusIcon1 = document.createElement("i");
           plusIcon1.setAttribute("class", "ri-add-line");
           ingradientsOfObject.appendChild(plusIcon1);
-                //add on click on plus to get data of quantiries
-                plusIcon1.onclick=function(){
-                    paraOfIngradients.textContent = "Ingradients   "+`${aray1}`;
-                }
+          //add on click on plus to get data of quantiries
+          plusIcon1.onclick = function () {
+            //for loop on array to get data and put it in list
+            for (let l1 of aray1) {
+                const list1 = document.createElement("li");
+              unorderedList1.appendChild(list1);
+
+              list1.textContent = `${l1}`;
+            }
+          };
           // div of   quantities of selected item
           const quantitiesOfObject = document.createElement("div");
           quantitiesOfObject.setAttribute("class", "item quantities Headnotes");
@@ -277,24 +305,31 @@ if (item) {
 
           quantitiesOfObject.appendChild(paraOfQuantities);
           paraOfQuantities.textContent = "Quantities";
-                // making fo loop to get values of all ingradients that have value
-                let aray2=[];
-                for (const [key, value] of Object.entries(s)) {
-                    if(key.includes("strMeasure")&& value!=""){
-                        aray2.push(value);
-                    
-                    }
-                
-                }
 
-          
+            // create lists to list items
+            const unorderedList2 = document.createElement("ol");
+            ingradientsOfObject.appendChild(unorderedList2);
+          // making fo loop to get values of all ingradients that have value
+          let aray2 = [];
+          for (const [key, value] of Object.entries(s)) {
+            if (key.includes("strMeasure") && value != null) {
+              aray2.push(value);
+            }
+          }
+
           // creation of plus icon
           const plusIcon2 = document.createElement("i");
           plusIcon2.setAttribute("class", "ri-add-line");
           quantitiesOfObject.appendChild(plusIcon2);
-          plusIcon2.onclick=function(){
-            paraOfQuantities.textContent = "Quantitites   "+`${aray2}`;
-        }
+          plusIcon2.onclick = function () {
+             //for loop on array to get data and put it in list
+             for (let l2 of aray2) {
+                const list2 = document.createElement("li");
+              unorderedList2.appendChild(list2);
+
+              list2.textContent = `${l2}`;
+            }
+          };
 
           // div of   instructions of selected item
           const instructionsOfObject = document.createElement("div");
