@@ -21,7 +21,7 @@
   top: 30px;
   left: 330px;
 }
-.ri-heart-3-line:before {
+.ri-heart-line:before {
   content: "\ee0b";
   top: 10px;
   font-size: 30px;
@@ -169,3 +169,16 @@
   height: 221px;
   overflow: scroll;
 }
+.fa-heart{
+  top: 10px;
+  font-size: 30px;
+  color: red;
+  position: absolute;
+  left: 10px;
+
+}
+
+.fa-heart:hover {
+  color: darkgoldenrod;
+}
+
