@@ -1,0 +1,171 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+/* styling header  */
+
+.img {
+  width: 100%;
+  height: 230px;
+  position: relative;
+}
+
+.favoriteIcon {
+  background-color: #fef7e8;
+  border-radius: 50%;
+  height: 50px;
+  width: 50px;
+  position: absolute;
+  top: 30px;
+  left: 330px;
+}
+.ri-heart-3-line:before {
+  content: "\ee0b";
+  top: 10px;
+  font-size: 30px;
+  color: #f3b658;
+  position: absolute;
+  left: 10px;
+}
+
+.ri-arrow-left-s-line::before {
+  position: absolute;
+  font-size: 45px;
+  color: #505050;
+}
+/* styling section of description of selected item */
+.descriptionOfItems {
+  height: 600px;
+  margin-left: 30px;
+  width: 350px;
+  margin-top: 10px;
+}
+
+.Headnotes {
+  color: #808080;
+}
+.ingradients {
+  background-color: rgba(254, 247, 232, 0.5);
+  height: 50px;
+  width: 100%;
+  padding: 10px;
+  margin-top: 15px;
+  border-radius: 10px;
+  position: relative;
+}
+.ri-add-line:before {
+  content: "\ea13";
+  position: absolute;
+  left: 310px;
+  bottom: 15px;
+}
+.item {
+  margin-bottom: 10px;
+}
+.quantities {
+  height: 50px;
+  width: 100%;
+  padding: 10px;
+  background-color: rgba(254, 247, 232, 0.5);
+  border-radius: 10px;
+  position: relative;
+}
+
+.instructions {
+  background-color: rgba(254, 247, 232, 0.5);
+  height: 50px;
+  width: 100%;
+  padding: 10px;
+  border-radius: 10px;
+  position: relative;
+}
+.divOfData {
+  background-color: rgba(254, 247, 232, 0.5);
+  height: 167px;
+  width: 100%;
+  padding: 10px;
+  border-radius: 10px;
+  position: relative;
+}
+.divOfData .ri-add-line {
+  bottom: 130px;
+}
+.ri-arrow-left-s-line:before {
+  content: "\ea64";
+  position: absolute;
+  right: 360px;
+  top: 34px;
+}
+/* MQ for selected page for ipad */
+@media only screen  and (min-width:768px){
+    .favoriteIcon{
+        left:680px;
+    }
+    
+    .descriptionOfItems{
+        /* background-color: turquoise; */
+        width: 700px;
+        margin-left: 30px;
+        margin-top: 20px;
+    }
+    
+    .ri-add-line::before{
+        left: 650px;
+    
+    }
+    
+    
+    .item{
+        margin-bottom: 30px;
+    }
+    
+    .img{
+        height: 300px;
+    }
+
+    .ri-arrow-left-s-line::before{
+        right: 704px;
+    }
+    }
+    @media only screen  and (min-width:800px){
+        .favoriteIcon{
+            left:1100px;
+        }
+        .img{
+            height: 550px;
+        }
+   
+        .ri-arrow-left-s-line::before{
+            right: 1150px;
+        }
+        .descriptionOfItems{
+            width: 1150px;
+            margin-left: 50px;
+        }
+        
+        .ri-add-line::before{
+            left: 1100px;
+        }
+        }
+    
+.ri-subtract-fill {
+  content: "\f1ae";
+  position: absolute;
+  left: 310px;
+  bottom: 15px;
+}
+
+.instructionDiv {
+  width: 320px;
+  padding: 15px;
+  background-color: rgba(254, 247, 232, 0.5);
+  color: black;
+  font-size: 20px;
+  font-weight: bold;
+  margin-top: 24px;
+  border-radius: 10px;
+  height: 221px;
+  overflow: scroll;
+}
