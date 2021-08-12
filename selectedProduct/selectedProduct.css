@@ -43,9 +43,6 @@
   margin-top: 10px;
 }
 
-.Headnotes {
-  color: #808080;
-}
 .ingradients {
   background-color: rgba(254, 247, 232, 0.5);
   height: 50px;
@@ -61,8 +58,15 @@
   left: 310px;
   bottom: 15px;
 }
+.ri-subtract-fill:before {
+  content: "\f1ae";
+  position: absolute;
+  left: 310px;
+  bottom: 15px;
+}
 .item {
   margin-bottom: 10px;
+  color: #808080;
 }
 .quantities {
   height: 50px;
@@ -89,7 +93,7 @@
   border-radius: 10px;
   position: relative;
 }
-.divOfData .ri-add-line {
+.divOfData .ri-add-line .ri-subtract-fill:before {
   bottom: 130px;
 }
 .ri-arrow-left-s-line:before {
@@ -111,16 +115,23 @@
         margin-top: 20px;
     }
     
-    .ri-add-line::before{
+    .ri-add-line::before {
         left: 650px;
     
     }
+    .ri-subtract-fill:before {
+      left: 649px;
+      bottom: 10px;
     
+    }
     
     .item{
         margin-bottom: 30px;
     }
-    
+         
+.clickDiv {
+
+      overflow: scroll;} 
     .img{
         height: 300px;
     }
@@ -144,21 +155,26 @@
             width: 1150px;
             margin-left: 50px;
         }
-        
-        .ri-add-line::before{
+        .clickDiv{
+          overflow: hidden;
+        }
+        .ri-add-line::before {
             left: 1100px;
         }
+        .ri-subtract-fill:before {
+          left:1095px;
         }
-    
+
+    }
 .ri-subtract-fill {
   content: "\f1ae";
   position: absolute;
-  left: 310px;
-  bottom: 15px;
+  left: 0px;
+  bottom: 6px;
 }
 
-.instructionDiv {
-  width: 320px;
+.clickDiv {
+  width:auto;
   padding: 15px;
   background-color: rgba(254, 247, 232, 0.5);
   color: black;
@@ -166,13 +182,37 @@
   font-weight: bold;
   margin-top: 24px;
   border-radius: 10px;
-  height: 221px;
+  height: 150px;
   overflow: scroll;
+}
+.cDiv {
+  width: auto;
+  padding: 15px;
+  background-color: rgba(254, 247, 232, 0.5);
+  color: black;
+  font-size: 20px;
+  font-weight: bold;
+  margin-top:78px;
+  border-radius: 10px;
+  height: 150px;
+
+}
+.instDiv {
+  width:auto;
+  padding: 15px;
+  background-color: rgba(254, 247, 232, 0.5);
+  color: black;
+  font-size: 20px;
+  font-weight: bold;
+  margin-top: 24px;
+  border-radius: 10px;
+  height: 150px;
+overflow: scroll;
 }
 .fa-heart{
   top: 10px;
   font-size: 30px;
-  color: red;
+  color: darkgoldenrod;
   position: absolute;
   left: 10px;
 
@@ -181,4 +221,3 @@
 .fa-heart:hover {
   color: darkgoldenrod;
 }
-
