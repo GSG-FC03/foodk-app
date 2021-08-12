@@ -21,43 +21,45 @@ for (let i = 0; i < storedNames.length; ++i) {
     .then((data) => {
       let dat = data.meals;
       for (element of dat) {
-        // Create a div with a card class
-        const link = document.createElement("a");
-        link.setAttribute("href", "../selectedProduct/selectedProduct.html");
-        const Meal = document.createElement("div");
-        Meal.appendChild(link);
-        Meal.setAttribute("class", "FirstOpject");
-        Container.appendChild(Meal);
-        const imgMeal = document.createElement("img");
-        imgMeal.setAttribute("class", "imgOfOpject");
+        if (element.strMeal === storedNames[i]) {
+          // Create a div with a card class
+          const link = document.createElement("a");
+          link.setAttribute("href", "../selectedProduct/selectedProduct.html");
+          const Meal = document.createElement("div");
+          Meal.appendChild(link);
+          Meal.setAttribute("class", "FirstOpject");
+          Container.appendChild(Meal);
+          const imgMeal = document.createElement("img");
+          imgMeal.setAttribute("class", "imgOfOpject");
 
-        link.appendChild(imgMeal);
+          link.appendChild(imgMeal);
 
-        imgMeal.setAttribute("src", `${element.strMealThumb}`);
-        const favoritMeal = document.createElement("div");
-        favoritMeal.setAttribute("class", "favorite");
-        const mealName = document.createElement("p");
-        mealName.setAttribute("class", "mealName");
-        mealName.textContent = `${element.strMeal}`;
-        mealName.style.display = "none";
-        Meal.appendChild(mealName);
-        Meal.appendChild(favoritMeal);
+          imgMeal.setAttribute("src", `${element.strMealThumb}`);
+          const favoritMeal = document.createElement("div");
+          favoritMeal.setAttribute("class", "favorite");
+          const mealName = document.createElement("p");
+          mealName.setAttribute("class", "mealName");
+          mealName.textContent = `${element.strMeal}`;
+          mealName.style.display = "none";
+          Meal.appendChild(mealName);
+          Meal.appendChild(favoritMeal);
 
-        var LocalstorageValues = localStorage.getItem("favoriteMeals");
-        LocalstorageValues = LocalstorageValues
-          ? LocalstorageValues.split(",")
-          : [];
-        var Found = Boolean(LocalstorageValues.includes(element.strMeal));
-        const favIcon = document.createElement("i");
-        if (Found == false) {
-          favIcon.setAttribute("class", "ri-heart-line");
-          favIcon.setAttribute("onclick", "Favorite(this)");
-        } else {
-          //favIcon.setAttribute("class", "fas");
-          favIcon.setAttribute("class", "fas fa-heart");
-          favIcon.setAttribute("onclick", "Favorite(this)");
+          var LocalstorageValues = localStorage.getItem("favoriteMeals");
+          LocalstorageValues = LocalstorageValues
+            ? LocalstorageValues.split(",")
+            : [];
+          var Found = Boolean(LocalstorageValues.includes(element.strMeal));
+          const favIcon = document.createElement("i");
+          if (Found == false) {
+            favIcon.setAttribute("class", "ri-heart-line");
+            favIcon.setAttribute("onclick", "Favorite(this)");
+          } else {
+            //favIcon.setAttribute("class", "fas");
+            favIcon.setAttribute("class", "fas fa-heart");
+            favIcon.setAttribute("onclick", "Favorite(this)");
+          }
+          favoritMeal.appendChild(favIcon);
         }
-        favoritMeal.appendChild(favIcon);
       }
     });
 }
@@ -65,9 +67,9 @@ for (let i = 0; i < storedNames.length; ++i) {
 var storedDrinksNames = localStorage.getItem("favoriteDrinks");
 storedDrinksNames = storedDrinksNames ? storedDrinksNames.split(",") : [];
 
-for (let i = 0; i < storedDrinksNames.length; ++i) {
+for (let b = 0; b < storedDrinksNames.length; ++b) {
   fetch(
-    `https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${storedDrinksNames[i]}`
+    `https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${storedDrinksNames[b]}`
   )
     .then((response) => {
       if (response.status !== 200) {
@@ -81,45 +83,47 @@ for (let i = 0; i < storedDrinksNames.length; ++i) {
     })
     .then((data) => {
       for (let i of data.drinks) {
-        const link = document.createElement("a");
-        link.setAttribute("href", "../selectedProduct/selectedProduct.html");
+        if (i.strDrink === storedDrinksNames[b]) {
+          const link = document.createElement("a");
+          link.setAttribute("href", "../selectedProduct/selectedProduct.html");
 
-        const Drink = document.createElement("div");
-        Drink.setAttribute("class", "FirstOpject");
+          const Drink = document.createElement("div");
+          Drink.setAttribute("class", "FirstOpject");
 
-        const imgDrink = document.createElement("img");
-        imgDrink.setAttribute("class", "imgOfOpject");
-        imgDrink.setAttribute("src", `${i.strDrinkThumb}`);
+          const imgDrink = document.createElement("img");
+          imgDrink.setAttribute("class", "imgOfOpject");
+          imgDrink.setAttribute("src", `${i.strDrinkThumb}`);
 
-        const drinkName = document.createElement("p");
-        drinkName.setAttribute("class", "drinkName");
-        drinkName.textContent = `${i.strDrink}`;
-        drinkName.style.display = "none";
-        Drink.appendChild(drinkName);
+          const drinkName = document.createElement("p");
+          drinkName.setAttribute("class", "drinkName");
+          drinkName.textContent = `${i.strDrink}`;
+          drinkName.style.display = "none";
+          Drink.appendChild(drinkName);
 
-        const favoriteDrink = document.createElement("div");
-        favoriteDrink.setAttribute("class", "favorite");
+          const favoriteDrink = document.createElement("div");
+          favoriteDrink.setAttribute("class", "favorite");
 
-        var LocalstorageValues = localStorage.getItem("favoriteDrinks");
-        LocalstorageValues = LocalstorageValues
-          ? LocalstorageValues.split(",")
-          : [];
-        var Found = Boolean(LocalstorageValues.includes(i.strDrink));
-        const favIcon = document.createElement("i");
-        if (Found == false) {
-          favIcon.setAttribute("class", "ri-heart-line");
-          favIcon.setAttribute("onclick", "Favorite(this)");
-        } else {
-          //favIcon.setAttribute("class", "fas");
-          favIcon.setAttribute("class", "fas fa-heart");
-          favIcon.setAttribute("onclick", "Favorite(this)");
+          var LocalstorageValues = localStorage.getItem("favoriteDrinks");
+          LocalstorageValues = LocalstorageValues
+            ? LocalstorageValues.split(",")
+            : [];
+          var Found = Boolean(LocalstorageValues.includes(i.strDrink));
+          const favIcon = document.createElement("i");
+          if (Found == false) {
+            favIcon.setAttribute("class", "ri-heart-line");
+            favIcon.setAttribute("onclick", "Favorite(this)");
+          } else {
+            //favIcon.setAttribute("class", "fas");
+            favIcon.setAttribute("class", "fas fa-heart");
+            favIcon.setAttribute("onclick", "Favorite(this)");
+          }
+
+          link.appendChild(imgDrink);
+          favoriteDrink.appendChild(favIcon);
+          Drink.appendChild(favoriteDrink);
+          Drink.appendChild(link);
+          Container.appendChild(Drink);
         }
-
-        link.appendChild(imgDrink);
-        favoriteDrink.appendChild(favIcon);
-        Drink.appendChild(favoriteDrink);
-        Drink.appendChild(link);
-        Container.appendChild(Drink);
       }
     });
 }
