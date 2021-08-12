@@ -58,6 +58,12 @@
   left: 310px;
   bottom: 15px;
 }
+.ri-subtract-fill:before {
+  content: "\f1ae";
+  position: absolute;
+  left: 310px;
+  bottom: 15px;
+}
 .item {
   margin-bottom: 10px;
   color: #808080;
@@ -87,7 +93,7 @@
   border-radius: 10px;
   position: relative;
 }
-.divOfData .ri-add-line {
+.divOfData .ri-add-line .ri-subtract-fill:before {
   bottom: 130px;
 }
 .ri-arrow-left-s-line:before {
@@ -114,13 +120,18 @@
     
     }
     .ri-subtract-fill:before {
-      left: 650px;
+      left: 649px;
+      bottom: 10px;
+    
     }
     
     .item{
         margin-bottom: 30px;
     }
-    
+         
+.clickDiv {
+
+      overflow: scroll;} 
     .img{
         height: 300px;
     }
@@ -144,19 +155,22 @@
             width: 1150px;
             margin-left: 50px;
         }
-        
+        .clickDiv{
+          overflow: hidden;
+        }
         .ri-add-line::before {
             left: 1100px;
         }
         .ri-subtract-fill:before {
-          left: 1100px;
+          left:1095px;
         }
-      }
+
+    }
 .ri-subtract-fill {
   content: "\f1ae";
   position: absolute;
-  left: 310px;
-  bottom: 15px;
+  left: 0px;
+  bottom: 6px;
 }
 
 .clickDiv {
