@@ -35,7 +35,19 @@ if (item) {
           imgOfHeader.appendChild(favoriteIcon);
 
           const fav = document.createElement("i");
-          fav.setAttribute("class", "ri-heart-3-line");
+          var LocalstorageValues = localStorage.getItem("favoriteDrinks");
+          LocalstorageValues = LocalstorageValues
+            ? LocalstorageValues.split(",")
+            : [];
+          var Found = Boolean(LocalstorageValues.includes(s.strDrink));
+          if (Found == false) {
+            fav.setAttribute("class", "ri-heart-line");
+            fav.setAttribute("onclick", "Favorite(this)");
+          } else {
+            //favIcon.setAttribute("class", "fas");
+            fav.setAttribute("class", "fas fa-heart");
+            fav.setAttribute("onclick", "Favorite(this)");
+          }
           favoriteIcon.appendChild(fav);
 
           // div of name of selected item
@@ -46,6 +58,7 @@ if (item) {
           const name = document.createElement("h3");
           nameOfObject.appendChild(name);
           name.textContent = `${s.strMeal}`;
+          name.setAttribute("class", "mealName");
 
           // div of category of selected item
           const typeOfObject = document.createElement("div");
@@ -231,7 +244,19 @@ if (item) {
           imgOfHeader.appendChild(favoriteIcon);
 
           const fav = document.createElement("i");
-          fav.setAttribute("class", "ri-heart-3-line");
+          var LocalstorageValues = localStorage.getItem("favoriteDrinks");
+          LocalstorageValues = LocalstorageValues
+            ? LocalstorageValues.split(",")
+            : [];
+          var Found = Boolean(LocalstorageValues.includes(s.strDrink));
+          if (Found == false) {
+            fav.setAttribute("class", "ri-heart-line");
+            fav.setAttribute("onclick", "FavoriteDrink(this)");
+          } else {
+            //favIcon.setAttribute("class", "fas");
+            fav.setAttribute("class", "fas fa-heart");
+            fav.setAttribute("onclick", "FavoriteDrink(this)");
+          }
           favoriteIcon.appendChild(fav);
 
           // div of name of selected item
@@ -242,6 +267,7 @@ if (item) {
           const name = document.createElement("h3");
           nameOfObject.appendChild(name);
           name.textContent = `${s.strDrink}`;
+          name.setAttribute("class", "drinkName");
 
           // div of category of selected item
           const typeOfObject = document.createElement("div");
@@ -379,4 +405,60 @@ if (item) {
       }
     })
     .catch((eroo) => console.log(eroo));
+}
+function Favorite(x) {
+  if (x.classList == "ri-heart-line") {
+    x.classList.toggle("ri-heart-line");
+    x.classList.toggle("fas");
+    x.classList.toggle("fa-heart");
+    const select =
+      x.parentElement.parentElement.parentElement.getElementsByClassName("mealName")[0]
+        .innerHTML;
+
+    var LocalStorageArr = localStorage.getItem("favoriteMeals");
+    LocalStorageArr = LocalStorageArr ? LocalStorageArr.split(",") : [];
+    LocalStorageArr.push(select);
+    localStorage.setItem("favoriteMeals", LocalStorageArr);
+  } else {
+    x.classList.toggle("ri-heart-line");
+    x.classList.toggle("fas");
+    x.classList.toggle("fa-heart");
+    const select =
+    x.parentElement.parentElement.parentElement.getElementsByClassName("mealName")[0]
+      .innerHTML;
+    var LocalStorageArr = localStorage.getItem("favoriteMeals");
+    LocalStorageArr = LocalStorageArr ? LocalStorageArr.split(",") : [];
+    var remove = LocalStorageArr.indexOf(select);
+    LocalStorageArr.splice(remove, 1);
+
+    localStorage.setItem("favoriteMeals", LocalStorageArr);
+  }
+}
+
+function FavoriteDrink(x) {
+  if (x.classList == "ri-heart-line") {
+    x.classList.toggle("ri-heart-line");
+    x.classList.toggle("fas");
+    x.classList.toggle("fa-heart");
+    const select =
+      x.parentElement.parentElement.parentElement.getElementsByClassName("drinkName")[0].innerHTML;
+      console.log(select)
+    var LocalStorageArr = localStorage.getItem("favoriteDrinks");
+    LocalStorageArr = LocalStorageArr ? LocalStorageArr.split(",") : [];
+    LocalStorageArr.push(select);
+    localStorage.setItem("favoriteDrinks", LocalStorageArr);
+  } else {
+    x.classList.toggle("ri-heart-line");
+    x.classList.toggle("fas");
+    x.classList.toggle("fa-heart");
+    const select =
+      x.parentElement.parentElement.parentElement.getElementsByClassName("drinkName")[0]
+        .innerHTML;
+    var LocalStorageArr = localStorage.getItem("favoriteDrinks");
+    LocalStorageArr = LocalStorageArr ? LocalStorageArr.split(",") : [];
+    var remove = LocalStorageArr.indexOf(select);
+    LocalStorageArr.splice(remove, 1);
+
+    localStorage.setItem("favoriteDrinks", LocalStorageArr);
+  }
 }

@@ -111,11 +111,11 @@ for (let b = 0; b < storedDrinksNames.length; ++b) {
           const favIcon = document.createElement("i");
           if (Found == false) {
             favIcon.setAttribute("class", "ri-heart-line");
-            favIcon.setAttribute("onclick", "Favorite(this)");
+            favIcon.setAttribute("onclick", "FavoriteDrink(this)");
           } else {
             //favIcon.setAttribute("class", "fas");
             favIcon.setAttribute("class", "fas fa-heart");
-            favIcon.setAttribute("onclick", "Favorite(this)");
+            favIcon.setAttribute("onclick", "FavoriteDrink(this)");
           }
 
           link.appendChild(imgDrink);
