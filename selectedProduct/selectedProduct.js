@@ -97,7 +97,7 @@ if (item) {
           // making fo loop to get values of all ingradients that have value
           let aray1 = [];
           for (const [key, value] of Object.entries(s)) {
-            if (key.includes("strIngredient") && value != null) {
+            if (key.includes("strIngredient") && value !==null) {
               aray1.push(value);
             }
           }  
@@ -151,7 +151,7 @@ if (item) {
           // making fo loop to get values of all ingradients that have value
           let aray2 = [];
           for (const [key, value] of Object.entries(s)) {
-            if (key.includes("strMeasure") && value != "") {
+            if (key.includes("strMeasure") && value !==null) {
               aray2.push(value);
             }
           } 
@@ -164,7 +164,7 @@ if (item) {
           plusIcon2.onclick = function () {
             quantitiesDiv.style.display = "block";
             quantitie.style.display = "block";
-            subtractIcon8.style.display = "block";
+            subtractIcon2.style.display = "block";
             quantitie.textContent = `${aray2}`;
             instructionsOfObject.style.marginTop = "177px";
             plusIcon2.style.display = "none";
@@ -175,7 +175,7 @@ if (item) {
           quantitiesOfObject.appendChild(subtractIcon2);
           subtractIcon2.style.display = "none";
 
-          subtractIcon8.onclick = function () {
+          subtractIcon2.onclick = function () {
             quantitiesDiv.style.display = "none";
             quantitie.style.display = "none";
             plusIcon2.style.display = "block";
@@ -192,7 +192,7 @@ if (item) {
           paraOfInstructions.textContent = "Instructions";
           
           const instructionDiv = document.createElement("div");
-          instructionDiv.setAttribute("class", "clickDiv");
+          instructionDiv.setAttribute("class", "instDiv");
           instructionsOfObject.appendChild(instructionDiv);
           instructionDiv.style.display = "none";
 
@@ -220,7 +220,7 @@ if (item) {
           instructionsOfObject.appendChild(subtractIcon3);
           subtractIcon3.style.display = "none";
 
-          plsubtractIcon3usIcon4.onclick = function () {
+          subtractIcon3.onclick = function () {
             instructions.style.display = "none";
             instructionDiv.style.display = "none";
             plusIcon3.style.display = "block";
@@ -312,7 +312,7 @@ if (item) {
           // making fo loop to get values of all ingradients that have value
           let aray1 = [];
           for (const [key, value] of Object.entries(s)) {
-            if (key.includes("strIngredient") && value !== null) {
+            if (key.includes("strIngredient") && value !==null) {
               aray1.push(value);
             }
           }
@@ -326,7 +326,7 @@ if (item) {
           plusIcon1.onclick = function () {
             ingradient.style.display = "block";
             IngradientsDiv.style.display = "block";
-            plusIcon6.style.display = "block";
+            subtractIcon1.style.display = "block";
             ingradient.textContent = `${aray1}`;
             quantitiesOfObject.style.marginTop = "177px";
             plusIcon1.style.display = "none";
@@ -366,7 +366,7 @@ if (item) {
           // making fo loop to get values of all ingradients that have value
           let aray2 = [];
           for (const [key, value] of Object.entries(s)) {
-            if (key.includes("strMeasure") && value != null) {
+            if (key.includes("strMeasure") && value !==null) {
               aray2.push(value);
             }
           }
@@ -397,19 +397,16 @@ if (item) {
             subtractIcon2.style.display = "none";
             instructionsOfObject.style.marginTop = "0";
           };
-
-        
-          // div of   instructions of selected item
           const instructionsOfObject = document.createElement("div");
           instructionsOfObject.setAttribute("class", "item instructions");
           descriptionOfItems.appendChild(instructionsOfObject);
 
           const paraOfInstructions = document.createElement("p");
-          paraOfInstructions.textContent = "Instructions";
           instructionsOfObject.appendChild(paraOfInstructions);
-        
+          paraOfInstructions.textContent = "Instructions";
+          
           const instructionDiv = document.createElement("div");
-          instructionDiv.setAttribute("class", "clickDiv");
+          instructionDiv.setAttribute("class", "instDiv");
           instructionsOfObject.appendChild(instructionDiv);
           instructionDiv.style.display = "none";
 
@@ -417,32 +414,37 @@ if (item) {
           instructions.textContent = `${s.strInstructions}`;
           instructions.style.display = "none";
           instructionDiv.appendChild(instructions);
-        }        
+
           // creation of plus icon
-          
-          // when we click on plus sign display instructions
+        
           const plusIcon3 = document.createElement("i");
           plusIcon3.setAttribute("class", "ri-add-line");
           instructionsOfObject.appendChild(plusIcon3);
-
+        
+          // when we click on plus sign display instructions
           plusIcon3.onclick = function () {
             instructionDiv.style.display = "block";
             instructions.style.display = "block";
             plusIcon3.style.display = "none";
             subtractIcon3.style.display = "block";
           };
+
           const subtractIcon3 = document.createElement("i");
           subtractIcon3.setAttribute("class", "ri-subtract-fill");
           instructionsOfObject.appendChild(subtractIcon3);
           subtractIcon3.style.display = "none";
 
           subtractIcon3.onclick = function () {
-            instructionDiv.style.display = "none";
             instructions.style.display = "none";
+            instructionDiv.style.display = "none";
             plusIcon3.style.display = "block";
             subtractIcon3.style.display = "none";
           };
+          
+          
+        }
       }
     })
+ 
     .catch((eroo) => console.log(eroo));
 }
