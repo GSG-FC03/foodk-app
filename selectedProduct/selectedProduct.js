@@ -19,7 +19,6 @@ if (item) {
           // give the img class src
           imagesrc.setAttribute("src", `${s.strMealThumb}`);
 
-
           // create a in anchor tag and , class , href
           const arrow = document.createElement("a");
           arrow.setAttribute("href", "../food/food.html");
@@ -85,7 +84,7 @@ if (item) {
           ingradientsOfObject.appendChild(paraOfIngradients);
           paraOfIngradients.textContent = "Ingradients";
 
-         const IngradientsDiv = document.createElement("div");
+          const IngradientsDiv = document.createElement("div");
           IngradientsDiv.setAttribute("class", "clickDiv");
           IngradientsDiv.style.display = "none";
           ingradientsOfObject.appendChild(IngradientsDiv);
@@ -97,10 +96,10 @@ if (item) {
           // making fo loop to get values of all ingradients that have value
           let aray1 = [];
           for (const [key, value] of Object.entries(s)) {
-            if (key.includes("strIngredient") && value !==null) {
+            if (key.includes("strIngredient") && value !== null) {
               aray1.push(value);
             }
-          }  
+          }
           // creation of plus icon
           const plusIcon1 = document.createElement("i");
           plusIcon1.setAttribute("class", "ri-add-line");
@@ -121,7 +120,7 @@ if (item) {
           ingradientsOfObject.appendChild(subtractIcon1);
           subtractIcon1.style.display = "none";
 
-        //add on click on subtract to hide data of quantiries
+          //add on click on subtract to hide data of quantiries
           subtractIcon1.onclick = function () {
             IngradientsDiv.style.display = "none";
             ingradient.style.display = "none";
@@ -151,15 +150,15 @@ if (item) {
           // making fo loop to get values of all ingradients that have value
           let aray2 = [];
           for (const [key, value] of Object.entries(s)) {
-            if (key.includes("strMeasure") && value !==null) {
+            if (key.includes("strMeasure") && value !== null) {
               aray2.push(value);
             }
-          } 
+          }
           // creation of plus icon
           const plusIcon2 = document.createElement("i");
           plusIcon2.setAttribute("class", "ri-add-line");
           quantitiesOfObject.appendChild(plusIcon2);
-          
+
           //add on click on plus to get data of quantiries
           plusIcon2.onclick = function () {
             quantitiesDiv.style.display = "block";
@@ -190,7 +189,7 @@ if (item) {
           const paraOfInstructions = document.createElement("p");
           instructionsOfObject.appendChild(paraOfInstructions);
           paraOfInstructions.textContent = "Instructions";
-          
+
           const instructionDiv = document.createElement("div");
           instructionDiv.setAttribute("class", "instDiv");
           instructionsOfObject.appendChild(instructionDiv);
@@ -202,11 +201,11 @@ if (item) {
           instructionDiv.appendChild(instructions);
 
           // creation of plus icon
-        
+
           const plusIcon3 = document.createElement("i");
           plusIcon3.setAttribute("class", "ri-add-line");
           instructionsOfObject.appendChild(plusIcon3);
-        
+
           // when we click on plus sign display instructions
           plusIcon3.onclick = function () {
             instructionDiv.style.display = "block";
@@ -226,8 +225,6 @@ if (item) {
             plusIcon3.style.display = "block";
             subtractIcon3.style.display = "none";
           };
-          
-          
         }
       }
     })
@@ -312,11 +309,11 @@ if (item) {
           // making fo loop to get values of all ingradients that have value
           let aray1 = [];
           for (const [key, value] of Object.entries(s)) {
-            if (key.includes("strIngredient") && value !==null) {
+            if (key.includes("strIngredient") && value !== null) {
               aray1.push(value);
             }
           }
-          
+
           // creation of plus icon
           const plusIcon1 = document.createElement("i");
           plusIcon1.setAttribute("class", "ri-add-line");
@@ -353,7 +350,7 @@ if (item) {
           const paraOfQuantities = document.createElement("p");
           quantitiesOfObject.appendChild(paraOfQuantities);
           paraOfQuantities.textContent = "Quantities";
-          
+
           const quantitiesDiv = document.createElement("div");
           quantitiesDiv.setAttribute("class", "clickDiv");
           quantitiesDiv.style.display = "none";
@@ -366,7 +363,7 @@ if (item) {
           // making fo loop to get values of all ingradients that have value
           let aray2 = [];
           for (const [key, value] of Object.entries(s)) {
-            if (key.includes("strMeasure") && value !==null) {
+            if (key.includes("strMeasure") && value !== null) {
               aray2.push(value);
             }
           }
@@ -374,7 +371,7 @@ if (item) {
           const plusIcon2 = document.createElement("i");
           plusIcon2.setAttribute("class", "ri-add-line");
           quantitiesOfObject.appendChild(plusIcon2);
-          
+
           //add on click on plus to get data of quantiries
           plusIcon2.onclick = function () {
             quantitiesDiv.style.display = "block";
@@ -404,7 +401,7 @@ if (item) {
           const paraOfInstructions = document.createElement("p");
           instructionsOfObject.appendChild(paraOfInstructions);
           paraOfInstructions.textContent = "Instructions";
-          
+
           const instructionDiv = document.createElement("div");
           instructionDiv.setAttribute("class", "instDiv");
           instructionsOfObject.appendChild(instructionDiv);
@@ -416,11 +413,11 @@ if (item) {
           instructionDiv.appendChild(instructions);
 
           // creation of plus icon
-        
+
           const plusIcon3 = document.createElement("i");
           plusIcon3.setAttribute("class", "ri-add-line");
           instructionsOfObject.appendChild(plusIcon3);
-        
+
           // when we click on plus sign display instructions
           plusIcon3.onclick = function () {
             instructionDiv.style.display = "block";
@@ -440,11 +437,9 @@ if (item) {
             plusIcon3.style.display = "block";
             subtractIcon3.style.display = "none";
           };
-          
-          
         }
       }
     })
- 
+
     .catch((eroo) => console.log(eroo));
 }

@@ -51,7 +51,6 @@
   position: absolute;
   top: 71px;
   left: -5px;
-
 }
 
 .ri-search-line:before {
@@ -123,7 +122,8 @@
     color: #c2b5b5;
     position: absolute;
     left: 248px;
-    top: 74px}
+    top: 74px;
+  }
 }
 /* MQ for container for desktop  */
 @media only screen and (min-width: 800px) {
@@ -151,7 +151,7 @@
     top: 74px;
   }
 }
-@media only screen and (min-width:800px)and (max-width:1022px){
+@media only screen and (min-width: 800px) and (max-width: 1022px) {
   .Container {
     width: 85%;
     margin-top: 40px;
@@ -174,5 +174,5 @@
     position: absolute;
     left: 267px;
     top: 74px;
-  }}
-
+  }
+}
