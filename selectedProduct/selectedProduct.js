@@ -16,13 +16,12 @@ if (item) {
     .then((data) => {
       for (let s of data.meals) {
         if (s.strMeal === item) {
-
-          // give the img class src 
+          // give the img class src
           imagesrc.setAttribute("src", `${s.strMealThumb}`);
 
-         // create a in anchor tag and , class , href  
+
+          // create a in anchor tag and , class , href
           const arrow = document.createElement("a");
-          arrow.setAttribute("class", "arrow");
           arrow.setAttribute("href", "../food/food.html");
           imgOfHeader.appendChild(arrow);
 
@@ -86,11 +85,35 @@ if (item) {
           paraOfIngradients.setAttribute("class", "Headnotes");
           ingradientsOfObject.appendChild(paraOfIngradients);
           paraOfIngradients.textContent = "Ingradients";
+      
+                    // create lists to list items
+          const unorderedList = document.createElement("ul");
+          ingradientsOfObject.appendChild(unorderedList);
+                  // making fo loop to get values of all ingradients that have value
+          let aray1 = [];
+
+          for (const [key, value] of Object.entries(s)) {
+            if (key.includes("strIngredient") && value != "") {
+              aray1.push(value);
+            }
+          }
 
           // creation of plus icon
           const plusIcon1 = document.createElement("i");
           plusIcon1.setAttribute("class", "ri-add-line");
           ingradientsOfObject.appendChild(plusIcon1);
+          //add on click on plus to get data of quantiries
+          plusIcon1.onclick = function () {
+              //for loop on array to get data and put it in list
+            for (let l1 of aray1) {
+              const list1 = document.createElement("li");
+              unorderedList.appendChild(list1);
+            
+              list1.textContent = `${l1}`;
+            }
+
+            
+          };
 
           // div of   quantities of selected item
           const quantitiesOfObject = document.createElement("div");
@@ -101,13 +124,34 @@ if (item) {
           paraOfQuantities.setAttribute("class", "Headnotes");
           quantitiesOfObject.appendChild(paraOfQuantities);
           paraOfQuantities.textContent = "Quantities";
+        
+            // create lists to list items
+          const unorderedList2 = document.createElement("ol");
+          ingradientsOfObject.appendChild(unorderedList2);
+         // making fo loop to get values of all ingradients that have value
+          let aray2 = [];
+          const list2 = document.createElement("li");
+          for (const [key, value] of Object.entries(s)) {
+            if (key.includes("strMeasure") && value != "") {
+              aray2.push(value);
+            }
+          }
 
           // creation of plus icon
           const plusIcon2 = document.createElement("i");
           plusIcon2.setAttribute("class", "ri-add-line");
           quantitiesOfObject.appendChild(plusIcon2);
+          //add on click on plus to get data of quantiries
+          plusIcon2.onclick = function () {
+                  //for loop on array to get data and put it in list
+            for (let l2 of aray2) {
+                const list2 = document.createElement("li");
+              unorderedList.appendChild(list2);
 
-          // div of   instructions of selected item
+              list2.textContent = `${l2}`;
+            }
+          };
+
           const instructionsOfObject = document.createElement("div");
           instructionsOfObject.setAttribute(
             "class",
@@ -121,18 +165,37 @@ if (item) {
           paraOfInstructions.textContent = "Instructions";
 
           // creation of plus icon
+          const plusIcon4 = document.createElement("i");
+          plusIcon4.setAttribute("class", "ri-subtract-fill");
+          instructionsOfObject.appendChild(plusIcon4);
+          plusIcon4.style.display = "none";
+
+          plusIcon4.onclick = function () {
+            instructions.style.display = "none";
+            instructionDiv.style.display = "none";
+            plusIcon3.style.display = "block";
+            plusIcon4.style.display = "none";
+          };
+          // when we click on plus sign display instructions
           const plusIcon3 = document.createElement("i");
           plusIcon3.setAttribute("class", "ri-add-line");
           instructionsOfObject.appendChild(plusIcon3);
 
-          // when we click on plus sign display instructions
           plusIcon3.onclick = function () {
+            instructionDiv.style.display = "block";
             instructions.style.display = "block";
+            plusIcon3.style.display = "none";
+            plusIcon4.style.display = "block";
           };
+          const instructionDiv = document.createElement("div");
+          instructionDiv.setAttribute("class", "instructionDiv");
+          instructionsOfObject.appendChild(instructionDiv);
+          instructionDiv.style.display = "none";
+
           const instructions = document.createElement("p");
-          instructionsOfObject.appendChild(instructions);
           instructions.textContent = `${s.strInstructions}`;
           instructions.style.display = "none";
+          instructionDiv.appendChild(instructions);
         }
       }
     })
@@ -163,7 +226,6 @@ if (item) {
           arrowIcon.setAttribute("class", "ri-arrow-left-s-line");
           arrow.appendChild(arrowIcon);
 
-          
           const favoriteIcon = document.createElement("div");
           favoriteIcon.setAttribute("class", "favoriteIcon");
           imgOfHeader.appendChild(favoriteIcon);
@@ -193,7 +255,7 @@ if (item) {
           const category = document.createElement("h3");
           typeOfObject.appendChild(category);
           category.textContent = `${s.strCategory}`;
-
+          // div of ingradients of selected item
           const ingradientsOfObject = document.createElement("div");
           ingradientsOfObject.setAttribute(
             "class",
@@ -206,11 +268,33 @@ if (item) {
           ingradientsOfObject.appendChild(paraOfIngradients);
           paraOfIngradients.textContent = "Ingradients";
 
+
+            // create lists to list items
+            const unorderedList1 = document.createElement("ol");
+            ingradientsOfObject.appendChild(unorderedList1);
+
+          // making fo loop to get values of all ingradients that have value
+          let aray1 = [];
+          for (const [key, value] of Object.entries(s)) {
+            if (key.includes("strIngredient") && value != null) {
+              aray1.push(value);
+            }
+          }
+
           // creation of plus icon
           const plusIcon1 = document.createElement("i");
           plusIcon1.setAttribute("class", "ri-add-line");
           ingradientsOfObject.appendChild(plusIcon1);
+          //add on click on plus to get data of quantiries
+          plusIcon1.onclick = function () {
+            //for loop on array to get data and put it in list
+            for (let l1 of aray1) {
+                const list1 = document.createElement("li");
+              unorderedList1.appendChild(list1);
 
+              list1.textContent = `${l1}`;
+            }
+          };
           // div of   quantities of selected item
           const quantitiesOfObject = document.createElement("div");
           quantitiesOfObject.setAttribute("class", "item quantities Headnotes");
@@ -222,10 +306,30 @@ if (item) {
           quantitiesOfObject.appendChild(paraOfQuantities);
           paraOfQuantities.textContent = "Quantities";
 
+            // create lists to list items
+            const unorderedList2 = document.createElement("ol");
+            ingradientsOfObject.appendChild(unorderedList2);
+          // making fo loop to get values of all ingradients that have value
+          let aray2 = [];
+          for (const [key, value] of Object.entries(s)) {
+            if (key.includes("strMeasure") && value != null) {
+              aray2.push(value);
+            }
+          }
+
           // creation of plus icon
           const plusIcon2 = document.createElement("i");
           plusIcon2.setAttribute("class", "ri-add-line");
           quantitiesOfObject.appendChild(plusIcon2);
+          plusIcon2.onclick = function () {
+             //for loop on array to get data and put it in list
+             for (let l2 of aray2) {
+                const list2 = document.createElement("li");
+              unorderedList2.appendChild(list2);
+
+              list2.textContent = `${l2}`;
+            }
+          };
 
           // div of   instructions of selected item
           const instructionsOfObject = document.createElement("div");
@@ -239,20 +343,38 @@ if (item) {
           paraOfInstructions.textContent = "Instructions";
           instructionsOfObject.appendChild(paraOfInstructions);
           paraOfInstructions.setAttribute("class", "Headnotes");
-
           // creation of plus icon
+          const plusIcon4 = document.createElement("i");
+          plusIcon4.setAttribute("class", "ri-subtract-fill");
+          instructionsOfObject.appendChild(plusIcon4);
+          plusIcon4.style.display = "none";
+
+          plusIcon4.onclick = function () {
+            instructionDiv.style.display = "none";
+            instructions.style.display = "none";
+            plusIcon3.style.display = "block";
+            plusIcon4.style.display = "none";
+          };
+          // when we click on plus sign display instructions
           const plusIcon3 = document.createElement("i");
           plusIcon3.setAttribute("class", "ri-add-line");
           instructionsOfObject.appendChild(plusIcon3);
 
-          // when we click on plus sign display instructions
           plusIcon3.onclick = function () {
+            instructionDiv.style.display = "block";
             instructions.style.display = "block";
+            plusIcon3.style.display = "none";
+            plusIcon4.style.display = "block";
           };
+          const instructionDiv = document.createElement("div");
+          instructionDiv.setAttribute("class", "instructionDiv");
+          instructionsOfObject.appendChild(instructionDiv);
+          instructionDiv.style.display = "none";
+
           const instructions = document.createElement("p");
-          instructionsOfObject.appendChild(instructions);
           instructions.textContent = `${s.strInstructions}`;
           instructions.style.display = "none";
+          instructionDiv.appendChild(instructions);
         }
       }
     })
