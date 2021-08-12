@@ -19,7 +19,6 @@ if (item) {
           // give the img class src
           imagesrc.setAttribute("src", `${s.strMealThumb}`);
 
-
           // create a in anchor tag and , class , href
           const arrow = document.createElement("a");
           arrow.setAttribute("href", "../food/food.html");
@@ -34,6 +33,7 @@ if (item) {
           favoriteIcon.setAttribute("class", "favoriteIcon");
           imgOfHeader.appendChild(favoriteIcon);
 
+    
           const fav = document.createElement("i");
           var LocalstorageValues = localStorage.getItem("favoriteDrinks");
           LocalstorageValues = LocalstorageValues
@@ -50,6 +50,7 @@ if (item) {
           }
           favoriteIcon.appendChild(fav);
 
+         
           // div of name of selected item
           const nameOfObject = document.createElement("div");
           nameOfObject.setAttribute("class", "item");
@@ -58,19 +59,20 @@ if (item) {
           const name = document.createElement("h3");
           nameOfObject.appendChild(name);
           name.textContent = `${s.strMeal}`;
-          name.setAttribute("class", "mealName");
 
           // div of category of selected item
           const typeOfObject = document.createElement("div");
           typeOfObject.setAttribute("class", "item");
           descriptionOfItems.appendChild(typeOfObject);
+
           const paraOfCategory = document.createElement("p");
-          paraOfCategory.setAttribute("class", "Headnotes");
           typeOfObject.appendChild(paraOfCategory);
           paraOfCategory.textContent = "Category";
+
           const category = document.createElement("h3");
-          typeOfObject.appendChild(category);
+          category.style.color = "black";
           category.textContent = `${s.strCategory}`;
+          typeOfObject.appendChild(category);
 
           // div of area of selected item
           const areaOfObject = document.createElement("div");
@@ -78,91 +80,118 @@ if (item) {
           descriptionOfItems.appendChild(areaOfObject);
 
           const paraOfArea = document.createElement("p");
-          paraOfArea.setAttribute("class", "Headnotes");
+          paraOfArea.style.color = "black";
           areaOfObject.appendChild(paraOfArea);
           paraOfArea.textContent = "Area";
 
           const area = document.createElement("h3");
-          areaOfObject.appendChild(area);
+          area.style.color = "black";
           area.textContent = `${s.strArea}`;
-
+          areaOfObject.appendChild(area);
           // div of  ingradients of selected item
           const ingradientsOfObject = document.createElement("div");
-          ingradientsOfObject.setAttribute(
-            "class",
-            "item ingradients Headnotes"
-          );
+          ingradientsOfObject.setAttribute("class", "item ingradients");
           descriptionOfItems.appendChild(ingradientsOfObject);
 
           const paraOfIngradients = document.createElement("p");
-          paraOfIngradients.setAttribute("class", "Headnotes");
           ingradientsOfObject.appendChild(paraOfIngradients);
           paraOfIngradients.textContent = "Ingradients";
-      
-                    // create lists to list items
-          const unorderedList = document.createElement("ul");
-          ingradientsOfObject.appendChild(unorderedList);
-                  // making fo loop to get values of all ingradients that have value
-          let aray1 = [];
 
+          const IngradientsDiv = document.createElement("div");
+          IngradientsDiv.setAttribute("class", "clickDiv");
+          IngradientsDiv.style.display = "none";
+          ingradientsOfObject.appendChild(IngradientsDiv);
+
+          const ingradient = document.createElement("p");
+          ingradient.style.display = "none";
+          IngradientsDiv.appendChild(ingradient);
+
+          // making fo loop to get values of all ingradients that have value
+          let aray1 = [];
           for (const [key, value] of Object.entries(s)) {
-            if (key.includes("strIngredient") && value != "") {
+            if (key.includes("strIngredient") && value !== null) {
               aray1.push(value);
             }
           }
-
           // creation of plus icon
           const plusIcon1 = document.createElement("i");
           plusIcon1.setAttribute("class", "ri-add-line");
           ingradientsOfObject.appendChild(plusIcon1);
+
           //add on click on plus to get data of quantiries
           plusIcon1.onclick = function () {
-              //for loop on array to get data and put it in list
-            for (let l1 of aray1) {
-              const list1 = document.createElement("li");
-              unorderedList.appendChild(list1);
-            
-              list1.textContent = `${l1}`;
-            }
-
-            
+            ingradient.style.display = "block";
+            IngradientsDiv.style.display = "block";
+            subtractIcon1.style.display = "block";
+            ingradient.textContent = `${aray1}`;
+            quantitiesOfObject.style.marginTop = "177px";
+            plusIcon1.style.display = "none";
           };
+          // creation of subtract icon
+          const subtractIcon1 = document.createElement("i");
+          subtractIcon1.setAttribute("class", "ri-subtract-fill");
+          ingradientsOfObject.appendChild(subtractIcon1);
+          subtractIcon1.style.display = "none";
 
-          // div of   quantities of selected item
-          const quantitiesOfObject = document.createElement("div");
-          quantitiesOfObject.setAttribute("class", "item quantities Headnotes");
-          descriptionOfItems.appendChild(quantitiesOfObject);
+          //add on click on subtract to hide data of quantiries
+          subtractIcon1.onclick = function () {
+            IngradientsDiv.style.display = "none";
+            ingradient.style.display = "none";
+            plusIcon1.style.display = "block";
+            subtractIcon1.style.display = "none";
+            quantitiesOfObject.style.marginTop = "0";
+          };
+ // div of   quantities of selected item
+ const quantitiesOfObject = document.createElement("div");
+ quantitiesOfObject.setAttribute("class", "item quantities ");
+ descriptionOfItems.appendChild(quantitiesOfObject);
 
-          const paraOfQuantities = document.createElement("p");
-          paraOfQuantities.setAttribute("class", "Headnotes");
-          quantitiesOfObject.appendChild(paraOfQuantities);
-          paraOfQuantities.textContent = "Quantities";
-        
-            // create lists to list items
-          const unorderedList2 = document.createElement("ol");
-          ingradientsOfObject.appendChild(unorderedList2);
-         // making fo loop to get values of all ingradients that have value
-          let aray2 = [];
-          const list2 = document.createElement("li");
-          for (const [key, value] of Object.entries(s)) {
-            if (key.includes("strMeasure") && value != "") {
-              aray2.push(value);
-            }
-          }
+ const paraOfQuantities = document.createElement("p");
+ quantitiesOfObject.appendChild(paraOfQuantities);
+ paraOfQuantities.textContent = "Quantities";
 
-          // creation of plus icon
-          const plusIcon2 = document.createElement("i");
-          plusIcon2.setAttribute("class", "ri-add-line");
-          quantitiesOfObject.appendChild(plusIcon2);
-          //add on click on plus to get data of quantiries
-          plusIcon2.onclick = function () {
-                  //for loop on array to get data and put it in list
-            for (let l2 of aray2) {
-                const list2 = document.createElement("li");
-              unorderedList.appendChild(list2);
+ const quantitiesDiv = document.createElement("div");
+ quantitiesDiv.setAttribute("class", "clickDiv");
+ quantitiesDiv.style.display = "none";
+ quantitiesOfObject.appendChild(quantitiesDiv);
 
-              list2.textContent = `${l2}`;
-            }
+ const quantitie = document.createElement("p");
+ quantitie.style.display = "none";
+ quantitiesDiv.appendChild(quantitie);
+
+ // making fo loop to get values of all ingradients that have value
+ let aray2 = [];
+ for (const [key, value] of Object.entries(s)) {
+   if (key.includes("strMeasure") && value !== null) {
+     aray2.push(value);
+   }
+ }
+ // creation of plus icon
+ const plusIcon2 = document.createElement("i");
+ plusIcon2.setAttribute("class", "ri-add-line");
+ quantitiesOfObject.appendChild(plusIcon2);
+
+ //add on click on plus to get data of quantiries
+ plusIcon2.onclick = function () {
+   quantitiesDiv.style.display = "block";
+   quantitie.style.display = "block";
+   subtractIcon2.style.display = "block";
+   quantitie.textContent = `${aray2}`;
+   instructionsOfObject.style.marginTop = "177px";
+   plusIcon2.style.display = "none";
+ };
+
+ const subtractIcon2 = document.createElement("i");
+ subtractIcon2.setAttribute("class", "ri-subtract-fill");
+ quantitiesOfObject.appendChild(subtractIcon2);
+ subtractIcon2.style.display = "none";
+
+ subtractIcon2.onclick = function () {
+   quantitiesDiv.style.display = "none";
+   quantitie.style.display = "none";
+   plusIcon2.style.display = "block";
+   subtractIcon2.style.display= "none";
+            instructionsOfObject.style.marginTop = "0";
           };
 
           const instructionsOfObject = document.createElement("div");
@@ -215,6 +244,7 @@ if (item) {
     .catch((eroo) => console.log(eroo));
 }
 // to display the chosen drink
+//========================================================================
 if (item) {
   fetch(`https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${item}`)
     .then((res) => {
@@ -259,6 +289,7 @@ if (item) {
           }
           favoriteIcon.appendChild(fav);
 
+         
           // div of name of selected item
           const nameOfObject = document.createElement("div");
           nameOfObject.setAttribute("class", "item");
@@ -266,43 +297,44 @@ if (item) {
 
           const name = document.createElement("h3");
           nameOfObject.appendChild(name);
+          name.style.color = "black";
           name.textContent = `${s.strDrink}`;
-          name.setAttribute("class", "drinkName");
 
           // div of category of selected item
           const typeOfObject = document.createElement("div");
           typeOfObject.setAttribute("class", "item");
           descriptionOfItems.appendChild(typeOfObject);
-          const paraOfCategory = document.createElement("p");
-          paraOfCategory.setAttribute("class", "Headnotes");
-          typeOfObject.appendChild(paraOfCategory);
 
+          const paraOfCategory = document.createElement("p");
+          typeOfObject.appendChild(paraOfCategory);
           paraOfCategory.textContent = "Category";
+
           const category = document.createElement("h3");
+          category.style.color = "black";
           typeOfObject.appendChild(category);
           category.textContent = `${s.strCategory}`;
           // div of ingradients of selected item
           const ingradientsOfObject = document.createElement("div");
-          ingradientsOfObject.setAttribute(
-            "class",
-            "item ingradients Headnotes"
-          );
+          ingradientsOfObject.setAttribute("class", "item ingradients");
           descriptionOfItems.appendChild(ingradientsOfObject);
 
           const paraOfIngradients = document.createElement("p");
-          paraOfIngradients.setAttribute("class", "Headnotes");
           ingradientsOfObject.appendChild(paraOfIngradients);
           paraOfIngradients.textContent = "Ingradients";
 
+          const IngradientsDiv = document.createElement("div");
+          IngradientsDiv.setAttribute("class", "clickDiv");
+          IngradientsDiv.style.display = "none";
+          ingradientsOfObject.appendChild(IngradientsDiv);
 
-            // create lists to list items
-            const unorderedList1 = document.createElement("ol");
-            ingradientsOfObject.appendChild(unorderedList1);
+          const ingradient = document.createElement("p");
+          ingradient.style.display = "none";
+          IngradientsDiv.appendChild(ingradient);
 
           // making fo loop to get values of all ingradients that have value
           let aray1 = [];
           for (const [key, value] of Object.entries(s)) {
-            if (key.includes("strIngredient") && value != null) {
+            if (key.includes("strIngredient") && value !== null) {
               aray1.push(value);
             }
           }
@@ -311,89 +343,92 @@ if (item) {
           const plusIcon1 = document.createElement("i");
           plusIcon1.setAttribute("class", "ri-add-line");
           ingradientsOfObject.appendChild(plusIcon1);
+
           //add on click on plus to get data of quantiries
           plusIcon1.onclick = function () {
-            //for loop on array to get data and put it in list
-            for (let l1 of aray1) {
-                const list1 = document.createElement("li");
-              unorderedList1.appendChild(list1);
+            ingradient.style.display = "block";
+            IngradientsDiv.style.display = "block";
+            subtractIcon1.style.display = "block";
+            ingradient.textContent = `${aray1}`;
+            quantitiesOfObject.style.marginTop = "177px";
+            plusIcon1.style.display = "none";
+          };
 
-              list1.textContent = `${l1}`;
-            }
+          const subtractIcon1 = document.createElement("i");
+          subtractIcon1.setAttribute("class", "ri-subtract-fill");
+          ingradientsOfObject.appendChild(subtractIcon1);
+          subtractIcon1.style.display = "none";
+
+          subtractIcon1.onclick = function () {
+            IngradientsDiv.style.display = "none";
+            ingradient.style.display = "none";
+            plusIcon1.style.display = "block";
+            subtractIcon1.style.display = "none";
+            quantitiesOfObject.style.marginTop = "0";
           };
           // div of   quantities of selected item
           const quantitiesOfObject = document.createElement("div");
-          quantitiesOfObject.setAttribute("class", "item quantities Headnotes");
+          quantitiesOfObject.setAttribute("class", "item quantities ");
           descriptionOfItems.appendChild(quantitiesOfObject);
 
           const paraOfQuantities = document.createElement("p");
-          paraOfQuantities.setAttribute("class", "Headnotes");
-
           quantitiesOfObject.appendChild(paraOfQuantities);
           paraOfQuantities.textContent = "Quantities";
 
-            // create lists to list items
-            const unorderedList2 = document.createElement("ol");
-            ingradientsOfObject.appendChild(unorderedList2);
+          const quantitiesDiv = document.createElement("div");
+          quantitiesDiv.setAttribute("class", "clickDiv");
+          quantitiesDiv.style.display = "none";
+          quantitiesOfObject.appendChild(quantitiesDiv);
+
+          const quantitie = document.createElement("p");
+          quantitie.style.display = "none";
+          quantitiesDiv.appendChild(quantitie);
+
           // making fo loop to get values of all ingradients that have value
           let aray2 = [];
           for (const [key, value] of Object.entries(s)) {
-            if (key.includes("strMeasure") && value != null) {
+            if (key.includes("strMeasure") && value !== null) {
               aray2.push(value);
             }
           }
-
           // creation of plus icon
           const plusIcon2 = document.createElement("i");
           plusIcon2.setAttribute("class", "ri-add-line");
           quantitiesOfObject.appendChild(plusIcon2);
-          plusIcon2.onclick = function () {
-             //for loop on array to get data and put it in list
-             for (let l2 of aray2) {
-                const list2 = document.createElement("li");
-              unorderedList2.appendChild(list2);
 
-              list2.textContent = `${l2}`;
-            }
+          //add on click on plus to get data of quantiries
+          plusIcon2.onclick = function () {
+            quantitiesDiv.style.display = "block";
+            quantitie.style.display = "block";
+            subtractIcon2.style.display = "block";
+            quantitie.textContent = `${aray2}`;
+            instructionsOfObject.style.marginTop = "177px";
+            plusIcon2.style.display = "none";
           };
 
-          // div of   instructions of selected item
-          const instructionsOfObject = document.createElement("div");
-          instructionsOfObject.setAttribute(
-            "class",
-            "item instructions Headnotes"
-          );
+          const subtractIcon2 = document.createElement("i");
+          subtractIcon2.setAttribute("class", "ri-subtract-fill");
+          quantitiesOfObject.appendChild(subtractIcon2);
+          subtractIcon2.style.display = "none";
+
+          subtractIcon2.onclick = function () {
+            quantitiesDiv.style.display = "none";
+            quantitie.style.display = "none";
+            plusIcon2.style.display = "block";
+            subtractIcon2.style.display = "none";
+            instructionsOfObject.style.marginTop = "0";
+          };
+
+                   const instructionsOfObject = document.createElement("div");
+          instructionsOfObject.setAttribute("class", "item instructions");
           descriptionOfItems.appendChild(instructionsOfObject);
 
           const paraOfInstructions = document.createElement("p");
-          paraOfInstructions.textContent = "Instructions";
           instructionsOfObject.appendChild(paraOfInstructions);
-          paraOfInstructions.setAttribute("class", "Headnotes");
-          // creation of plus icon
-          const plusIcon4 = document.createElement("i");
-          plusIcon4.setAttribute("class", "ri-subtract-fill");
-          instructionsOfObject.appendChild(plusIcon4);
-          plusIcon4.style.display = "none";
+          paraOfInstructions.textContent = "Instructions";
 
-          plusIcon4.onclick = function () {
-            instructionDiv.style.display = "none";
-            instructions.style.display = "none";
-            plusIcon3.style.display = "block";
-            plusIcon4.style.display = "none";
-          };
-          // when we click on plus sign display instructions
-          const plusIcon3 = document.createElement("i");
-          plusIcon3.setAttribute("class", "ri-add-line");
-          instructionsOfObject.appendChild(plusIcon3);
-
-          plusIcon3.onclick = function () {
-            instructionDiv.style.display = "block";
-            instructions.style.display = "block";
-            plusIcon3.style.display = "none";
-            plusIcon4.style.display = "block";
-          };
           const instructionDiv = document.createElement("div");
-          instructionDiv.setAttribute("class", "instructionDiv");
+          instructionDiv.setAttribute("class", "instDiv");
           instructionsOfObject.appendChild(instructionDiv);
           instructionDiv.style.display = "none";
 
@@ -401,9 +436,36 @@ if (item) {
           instructions.textContent = `${s.strInstructions}`;
           instructions.style.display = "none";
           instructionDiv.appendChild(instructions);
+
+          // creation of plus icon
+
+          const plusIcon3 = document.createElement("i");
+          plusIcon3.setAttribute("class", "ri-add-line");
+          instructionsOfObject.appendChild(plusIcon3);
+
+          // when we click on plus sign display instructions
+          plusIcon3.onclick = function () {
+            instructionDiv.style.display = "block";
+            instructions.style.display = "block";
+            plusIcon3.style.display = "none";
+            subtractIcon3.style.display = "block";
+          };
+
+          const subtractIcon3 = document.createElement("i");
+          subtractIcon3.setAttribute("class", "ri-subtract-fill");
+          instructionsOfObject.appendChild(subtractIcon3);
+          subtractIcon3.style.display = "none";
+
+          subtractIcon3.onclick = function () {
+            instructions.style.display = "none";
+            instructionDiv.style.display = "none";
+            plusIcon3.style.display = "block";
+            subtractIcon3.style.display = "none";
+          };
         }
       }
     })
+
     .catch((eroo) => console.log(eroo));
 }
 function Favorite(x) {
