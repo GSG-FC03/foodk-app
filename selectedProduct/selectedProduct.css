@@ -43,9 +43,6 @@
   margin-top: 10px;
 }
 
-.Headnotes {
-  color: #808080;
-}
 .ingradients {
   background-color: rgba(254, 247, 232, 0.5);
   height: 50px;
@@ -63,6 +60,7 @@
 }
 .item {
   margin-bottom: 10px;
+  color: #808080;
 }
 .quantities {
   height: 50px;
@@ -105,7 +103,7 @@
   bottom: 15px;
 }
 
-.instructionDiv {
+.clickDiv {
   width: 320px;
   padding: 15px;
   background-color: rgba(254, 247, 232, 0.5);
@@ -114,6 +112,31 @@
   font-weight: bold;
   margin-top: 24px;
   border-radius: 10px;
-  height: 221px;
+  height: 150px;
   overflow: scroll;
+}
+.cDiv {
+  width: 320px;
+  padding: 15px;
+  background-color: rgba(254, 247, 232, 0.5);
+  color: black;
+  font-size: 20px;
+  font-weight: bold;
+  margin-top:78px;
+  border-radius: 10px;
+  height: 150px;
+  overflow: scroll;
+}
+
+
+ .afterClick{
+  margin-top: 177px;
+  /* height: 50px;
+  /* width: 100%;
+  padding: 10px;
+  background-color: rgba(254, 247, 232, 0.5);
+  border-radius: 10px;
+  position: relative;
+  color: #808080;
+  margin-bottom: 10px; */ 
 }
