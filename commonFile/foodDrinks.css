@@ -64,7 +64,7 @@
 .ri-search-line:before {
   font-size: 25px;
   color: #c2b5b5;
-  position: fixed;
+  position: absolute;
   left: 260px;
   top: 74px;
 }
