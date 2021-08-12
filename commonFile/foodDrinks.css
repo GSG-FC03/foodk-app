@@ -22,17 +22,6 @@
   margin-top: 10%;
 }
 
-/* .Search {
-  position: relative;
-  color: #505050;
-  font-size: 25px;
-  height: 50px;
-  width: 50px;
-  background-color: white;
-  border: none;
-  padding-top: 5px;
-} */
-
 .searchInput {
   height: 50px;
   width: 330px;
@@ -59,13 +48,17 @@
   font-size: 40px;
   color: #505050;
   content: "\ea64";
+  position: absolute;
+  top: 71px;
+  left: -5px;
+
 }
 
 .ri-search-line:before {
   font-size: 25px;
   color: #c2b5b5;
   position: absolute;
-  left: 260px;
+  left: 84px;
   top: 74px;
 }
 
@@ -125,6 +118,12 @@
     left: 35px;
     top: 65px;
   }
+  .ri-search-line:before {
+    font-size: 25px;
+    color: #c2b5b5;
+    position: absolute;
+    left: 248px;
+    top: 74px}
 }
 /* MQ for container for desktop  */
 @media only screen and (min-width: 800px) {
@@ -148,7 +147,7 @@
     font-size: 25px;
     color: #c2b5b5;
     position: absolute;
-    left: 555px;
+    left: 553px;
     top: 74px;
   }
 }
