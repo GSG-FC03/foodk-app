@@ -109,11 +109,13 @@
         margin-top: 20px;
     }
     
-    .ri-add-line::before{
+    .ri-add-line::before {
         left: 650px;
     
     }
-    
+    .ri-subtract-fill:before {
+      left: 650px;
+    }
     
     .item{
         margin-bottom: 30px;
@@ -143,11 +145,13 @@
             margin-left: 50px;
         }
         
-        .ri-add-line::before{
+        .ri-add-line::before {
             left: 1100px;
         }
+        .ri-subtract-fill:before {
+          left: 1100px;
         }
-    
+      }
 .ri-subtract-fill {
   content: "\f1ae";
   position: absolute;
@@ -156,7 +160,7 @@
 }
 
 .clickDiv {
-  width: 320px;
+  width:auto;
   padding: 15px;
   background-color: rgba(254, 247, 232, 0.5);
   color: black;
@@ -168,7 +172,7 @@
   overflow: scroll;
 }
 .cDiv {
-  width: 320px;
+  width: auto;
   padding: 15px;
   background-color: rgba(254, 247, 232, 0.5);
   color: black;
@@ -177,18 +181,23 @@
   margin-top:78px;
   border-radius: 10px;
   height: 150px;
-  overflow: scroll;
+
 }
-
-
- .afterClick{
-  margin-top: 177px;
-  /* height: 50px;
-  /* width: 100%;
-  padding: 10px;
+.instDiv {
+  width:auto;
+  padding: 15px;
   background-color: rgba(254, 247, 232, 0.5);
+  color: black;
+  font-size: 20px;
+  font-weight: bold;
+  margin-top: 24px;
   border-radius: 10px;
-  position: relative;
-  color: #808080;
-  margin-bottom: 10px; */ 
+  height: 150px;
+overflow: scroll;
 }
+/* .ri-subtract-fill:before {
+  content: "\f1ae";
+  position: absolute;
+  left: -11px;
+  bottom: 0px;
+} */
