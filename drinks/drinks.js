@@ -2,9 +2,10 @@ const searchInput = document.getElementsByClassName("searchInput")[0];
 const drinksContainer = document.getElementById("MainContainer");
 const addLocalStorge = [];
 
+
 searchInput.onkeypress = searchs;
 drinksContainer.addEventListener("click", forSelected);
-// document.addEventListener('DOMContentLoaded',load())
+document.addEventListener('DOMContentLoaded',loadSearch)
 
 const api = "https://www.thecocktaildb.com/api/json/v1/1/search.php?s";
 // function to fetch API with try and return error by catch
@@ -64,6 +65,10 @@ function createCardsOfDrinks(data) {
 function searchs(e) {
   if (e.key === "Enter") {
     e.preventDefault();
+     const searcharr=[];
+          const se=localStorage.setItem("uuuu",searchInput.value);
+          console.log(se,111111)
+          searcharr.push(se)
     drinksContainer.textContent = "";
     fetch(
       `https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${searchInput.value}`
@@ -76,6 +81,7 @@ function searchs(e) {
         }
       })
       .then((data) => {
+       
         for (let i of data.drinks){
           // for each element in API Create a tag and give it href attribute that take the user to Selected productpage
           const link = document.createElement("a");
@@ -116,7 +122,7 @@ function searchs(e) {
       })
       .catch((rej) => console.log(rej));
 
-    searchInput.value = "";
+    // searchInput.value = "";
   
 }}
 
@@ -125,8 +131,65 @@ function forSelected(items) {
   const select = items.target.parentElement;
   const selectedElemet =
     select.getElementsByClassName("drinkName")[0].innerHTML;
-  const s = localStorage.setItem("value",selectedElemet);
-  addLocalStorge.push(s);
-  console.log(localStorage,111111)
+  const selected = localStorage.setItem("value",selectedElemet);
+  addLocalStorge.push(selected);
+}
+
+function loadSearch() {
+
+    drinksContainer.textContent = "";
+ 
+    fetch(
+      `https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${localStorage.getItem("uuuu")}`
+    )
+      .then((res) => {
+        if (res.status !== 200) {
+          console.log(`looks like there was an error ${res.status}`);
+        } else {
+          return res.json();
+        }
+      })
+.then((data) => {
+  for (let i of data.drinks){
+    // for each element in API Create a tag and give it href attribute that take the user to Selected productpage
+    const link = document.createElement("a");
+    link.setAttribute("href", "../selectedProduct/selectedProduct.html");
+    link.setAttribute("class", "item");
+    drinksContainer.appendChild(link);
+
+    // create div class FirstOpject inside a(item)
+    const Drink = document.createElement("div");
+    Drink.setAttribute("class", "FirstOpject");
+    link.appendChild(Drink);
+
+    // create p tag and give it class drinkName,give it taxt from API ng give it  style display as none and put it inside div(FirstOpject)
+    const drinkName = document.createElement("p");
+    drinkName.setAttribute("class", "drinkName");
+    drinkName.textContent = `${i.strDrink}`;
+    drinkName.style.display = "none";
+    Drink.appendChild(drinkName);
+
+    // create div tag and give it class favorite and put it inside div            (FirstOpject)
+    const favoriteDrink = document.createElement("div");
+    favoriteDrink.setAttribute("class", "favorite");
+    Drink.appendChild(favoriteDrink);
+
+    // create i tag and give it class ri-heart-line and put it inside div(favorite)
+    const favIcon = document.createElement("i");
+    favIcon.setAttribute("class", "ri-heart-line");
+    favoriteDrink.appendChild(favIcon);
+
+    //create img tag and give it class imgOfOpject and src attribute and put it inside div(FirstOpject)
+    const imgDrink = document.createElement("img");
+    imgDrink.setAttribute("class", "imgOfOpject");
+    imgDrink.setAttribute("src", `${i.strDrinkThumb}`);
+    Drink.appendChild(imgDrink);
+         
+       
+  }
+})
+.catch((rej) => console.log(rej));
+
+searchInput.value = "";
 
 }
