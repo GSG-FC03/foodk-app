@@ -109,6 +109,20 @@
   top: 10px;
   left: 10px;
 }
+.ri-heart-line:hover {
+  color: darkgoldenrod;
+}
+.fa-heart{
+  color: #f3b658;
+  position: absolute;
+  font-size: 25px;
+  top: 10px;
+  left: 10px;
+}
+.fa-heart:hover{
+  color: darkgoldenrod;
+
+}
 /* MQ for container for IPAD  */
 @media only screen and (min-width: 768px) {
   .Container {
