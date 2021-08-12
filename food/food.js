@@ -2,9 +2,9 @@ const search = document.querySelector(".searchInput");
 const Container = document.getElementById("MainContainer");
 
 Container.addEventListener("click", forSelected);
-search.onkeypress = function (e) {
+search.onkeypress = function(e){
   if (e.key === "Enter") {
-    localStorage.setItem(1, search.value);
+    localStorage.setItem(1,search.value);
     location.reload();
   }
 };
@@ -55,6 +55,7 @@ if (localStorage.getItem(1) != null) {
         mealName.textContent = `${element.strMeal}`;
         mealName.style.display = "none";
         Meal.appendChild(mealName);
+
       }
     });
 } else {
@@ -112,4 +113,17 @@ function forSelected(items) {
   const select = items.target.parentElement;
   const selectedElemet = select.getElementsByClassName("mealName")[0].innerHTML;
   const s = localStorage.setItem("value", selectedElemet);
+  addLocalStorge.push(s);
 }
+const BackButton = document.querySelector(".BackB");
+BackButton.addEventListener("click", function () {
+  localStorage.removeItem(1);
+});
+const HomeButton = document.querySelector(".Home");
+HomeButton.addEventListener("click", function () {
+  localStorage.removeItem(1);
+});
+const favButton = document.querySelector(".Favorite");
+favButton.addEventListener("click", function () {
+  localStorage.removeItem(1);
+});
