@@ -4,6 +4,7 @@ const addLocalStorge = [];
 
 searchInput.onkeypress = searchs;
 drinksContainer.addEventListener("click", forSelected);
+// document.addEventListener('DOMContentLoaded',load())
 
 const api = "https://www.thecocktaildb.com/api/json/v1/1/search.php?s";
 // function to fetch API with try and return error by catch
@@ -55,11 +56,11 @@ function createCardsOfDrinks(data) {
     drinkName.setAttribute("class", "drinkName");
     drinkName.textContent = `${arrayOfDrinks[i].strDrink}`;
     drinkName.style.display = "none";
-    Drink.appendChild(drinkName);
-
+    Drink.appendChild(drinkName)
     drinksContainer.appendChild(link);
   }
 }
+
 function searchs(e) {
   if (e.key === "Enter") {
     e.preventDefault();
@@ -75,7 +76,7 @@ function searchs(e) {
         }
       })
       .then((data) => {
-        for (let i of data.drinks) {
+        for (let i of data.drinks){
           // for each element in API Create a tag and give it href attribute that take the user to Selected productpage
           const link = document.createElement("a");
           link.setAttribute("href", "../selectedProduct/selectedProduct.html");
@@ -90,7 +91,7 @@ function searchs(e) {
           // create p tag and give it class drinkName,give it taxt from API ng give it  style display as none and put it inside div(FirstOpject)
           const drinkName = document.createElement("p");
           drinkName.setAttribute("class", "drinkName");
-          drinkName.textContent = `${i.idDrink}`;
+          drinkName.textContent = `${i.strDrink}`;
           drinkName.style.display = "none";
           Drink.appendChild(drinkName);
 
@@ -109,19 +110,23 @@ function searchs(e) {
           imgDrink.setAttribute("class", "imgOfOpject");
           imgDrink.setAttribute("src", `${i.strDrinkThumb}`);
           Drink.appendChild(imgDrink);
+          
+       
         }
       })
       .catch((rej) => console.log(rej));
 
     searchInput.value = "";
-  }
-}
+  
+}}
 
 // This function make repalce the value for each click on dish or drink and save in localStorge ,this is the same function in drink page .
 function forSelected(items) {
   const select = items.target.parentElement;
   const selectedElemet =
     select.getElementsByClassName("drinkName")[0].innerHTML;
-  const s = localStorage.setItem("value", selectedElemet);
+  const s = localStorage.setItem("value",selectedElemet);
   addLocalStorge.push(s);
+  console.log(localStorage,111111)
+
 }
