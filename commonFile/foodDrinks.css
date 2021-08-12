@@ -64,7 +64,7 @@
 .ri-search-line:before {
   font-size: 25px;
   color: #c2b5b5;
-  position: fixed;
+  position: absolute;
   left: 260px;
   top: 74px;
 }
@@ -147,8 +147,33 @@
   .ri-search-line:before {
     font-size: 25px;
     color: #c2b5b5;
-    position: fixed;
-    left: 515px;
+    position: absolute;
+    left: 555px;
     top: 74px;
   }
 }
+@media only screen and (min-width:800px)and (max-width:1022px){
+  .Container {
+    width: 85%;
+    margin-top: 40px;
+    margin-top: 48px;
+    margin-right: 120px;
+    margin-bottom: 20px;
+    margin-left: 120px;
+  }
+  .ri-arrow-left-s-line:before {
+    font-size: 40px;
+    color: #505050;
+    content: "\ea64";
+    position: absolute;
+    left: 35px;
+    top: 65px;
+  }
+  .ri-search-line:before {
+    font-size: 25px;
+    color: #c2b5b5;
+    position: absolute;
+    left: 267px;
+    top: 74px;
+  }}
+
